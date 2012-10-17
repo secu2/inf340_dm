@@ -10,7 +10,7 @@ define('DEBUGGING', false);
  *
  *Test
  *Lol
- *
+ *Plop
  *Essai
  *
  * You can load different configurations depending on your
