@@ -3,9 +3,7 @@
 //Pour afficher les logs de Doctrine
 define('DEBUGGING', false);
 //--------
-/*
- * AAAH QUE COUCOOOOOU.
- * 
+/* 
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
  *---------------------------------------------------------------
@@ -55,7 +53,7 @@ if (defined('ENVIRONMENT'))
  *---------------------------------------------------------------
  * SYSTEM FOLDER NAME
  *---------------------------------------------------------------
- *Test
+ *
  *
  * This variable must contain the name of your "system" folder.
  * Include the path if the folder is not in the same  directory
