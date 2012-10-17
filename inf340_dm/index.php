@@ -2,12 +2,11 @@
 //
 //Pour afficher les logs de Doctrine
 define('DEBUGGING', false);
-//--------
+//-------- 
 /* 
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
  *---------------------------------------------------------------
- *Fonction
  *
  * You can load different configurations depending on your
  * current environment. Setting the environment also influences
