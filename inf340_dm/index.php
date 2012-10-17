@@ -1,5 +1,5 @@
 <?php
-//---- JFB
+//
 //Pour afficher les logs de Doctrine
 define('DEBUGGING', false);
 //--------
