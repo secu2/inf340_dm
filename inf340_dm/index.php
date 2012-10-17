@@ -55,6 +55,7 @@ if (defined('ENVIRONMENT'))
  *---------------------------------------------------------------
  * SYSTEM FOLDER NAME
  *---------------------------------------------------------------
+ *Test
  *
  * This variable must contain the name of your "system" folder.
  * Include the path if the folder is not in the same  directory
