@@ -8,10 +8,6 @@ define('DEBUGGING', false);
  * APPLICATION ENVIRONMENT
  *---------------------------------------------------------------
  *
- *Test
- *Lol
- *Plop
- *Essai
  *
  * You can load different configurations depending on your
  * current environment. Setting the environment also influences
