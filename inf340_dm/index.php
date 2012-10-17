@@ -8,6 +8,8 @@ define('DEBUGGING', false);
  * APPLICATION ENVIRONMENT
  *---------------------------------------------------------------
  *
+ *Test
+ *
  * You can load different configurations depending on your
  * current environment. Setting the environment also influences
  * things like logging and error reporting.
