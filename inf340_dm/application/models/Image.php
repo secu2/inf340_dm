@@ -2,38 +2,37 @@
 
 namespace models;
 
-use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Image
  *
- * @ORM\Table(name="image")
- * @ORM\Entity
+ * @Table(name="image")
+ * @Entity
  */
 class Image
 {
     /**
      * @var integer $url
      *
-     * @ORM\Column(name="url", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @Column(name="url", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
      */
     private $url;
 
     /**
      * @var string $description
      *
-     * @ORM\Column(name="description", type="string", length=45, nullable=true)
+     * @Column(name="description", type="string", length=45, nullable=true)
      */
     private $description;
 
     /**
      * @var Station
      *
-     * @ORM\ManyToOne(targetEntity="Station")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="station_nom", referencedColumnName="nom")
+     * @ManyToOne(targetEntity="Station")
+     * @JoinColumns({
+     *   @JoinColumn(name="station_nom", referencedColumnName="nom")
      * })
      */
     private $stationNom;
