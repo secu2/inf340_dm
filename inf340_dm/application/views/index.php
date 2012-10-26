@@ -1,1 +1,1 @@
-Corps de la page<hr>
+<p>Bienvenu sur le site du Dahu !</p><hr>

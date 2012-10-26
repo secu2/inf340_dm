@@ -6,6 +6,16 @@
     <title> Dahu </title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     
-</head>
-<body>
-Header<hr>
+	</head>
+	<body>
+		<p>
+			<a href=""><img src="" alt="logo" /></a>
+		</p>
+		<p>
+			<a href="">Inscription</a>
+		</p>
+		<ul>
+			<li><a href="">Accueil</a></li>
+			<li><a href="">Les stations</a></li>
+			<li><a href="">Votre compte</a></li>
+		</ul><hr>
