@@ -13,9 +13,18 @@
 		</p>
 		<p>
 			<a href="">Inscription</a>
+			<a href="">Connexion</a>
 		</p>
 		<ul>
 			<li><a href="">Accueil</a></li>
 			<li><a href="">Les stations</a></li>
 			<li><a href="">Votre compte</a></li>
-		</ul><hr>
+		</ul>
+		<table>
+			<tr>
+				<th>News</th>
+			</tr>
+			<tr>
+				<td>01/01/01 - Ouverture du site</td>
+			</tr>
+		</table><hr>
