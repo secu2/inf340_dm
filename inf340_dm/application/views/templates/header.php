@@ -5,11 +5,11 @@
     <head>    
     <title> Dahu </title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    
+   
 	</head>
 	<body>
 		<p>
-			<a href=""><img src="" alt="logo" /></a>
+			<a href=""><img src="./ressources/images/logo.png" alt="logo" /></a>
 		</p>
 		<ul>
 			<!-- Si l'utilisateur est connecté, afficher "Bonjour [pseudo]" et un lien vers la déconnexion -->
