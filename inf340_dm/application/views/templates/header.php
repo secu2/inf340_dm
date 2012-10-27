@@ -12,8 +12,13 @@
 			<a href=""><img src="" alt="logo" /></a>
 		</p>
 		<p>
+			<!-- Si l'utilisateur est connecté, afficher "Bonjour [pseudo]" et un lien vers la déconnexion -->
+			<?php ?>
+			<!-- Sinon afficher liens vers inscription et connexion -->
+			<?php ?>
 			<a href="">Inscription</a>
 			<a href="">Connexion</a>
+			<?php ?>
 		</p>
 		<ul>
 			<li><a href="">Accueil</a></li>
