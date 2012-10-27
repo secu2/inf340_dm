@@ -11,15 +11,15 @@
 		<p>
 			<a href=""><img src="" alt="logo" /></a>
 		</p>
-		<p>
+		<ul>
 			<!-- Si l'utilisateur est connecté, afficher "Bonjour [pseudo]" et un lien vers la déconnexion -->
 			<?php ?>
 			<!-- Sinon afficher liens vers inscription et connexion -->
 			<?php ?>
-			<a href="">Inscription</a>
-			<a href="">Connexion</a>
+			<li><a href="">Inscription</a></li>
+			<li><a href="">Connexion</a></li>
 			<?php ?>
-		</p>
+		</ul>
 		<ul>
 			<li><a href="">Accueil</a></li>
 			<li><a href="">Les stations</a></li>
