@@ -1,5 +1,41 @@
 @CHARSET "UTF-8";
 
 body {
-	background-color: green;
+	background-image:linear-gradient(#949aa8, #f3f3f3);
+	background-image:-moz-linear-gradient(#949aa8, #f3f3f3);
+	background-image:-webkit-linear-gradient(#949aa8, #f3f3f3);
+	background-image:-o-linear-gradient(#949aa8, #f3f3f3);
+	background-image:-ms-linear-gradient(#949aa8, #f3f3f3);
+
+	font-family: calibri; 
 }
+
+#menu {
+	background-image: url('../images/borderhaut.png');
+	background-repeat: no-repeat;
+	width: 3000px;
+	height: 329px;
+	text-align: center;
+
+}
+
+#menu li {
+	margin-top: 60px;
+	
+	padding-bottom: 30px;
+	padding-right: 20px;
+	background-image: url('../images/boutonmenu.png');
+	background-repeat: no-repeat;
+	width: 181px;
+	height: 46px;
+	display: inline;
+	list-style: none;
+	
+	float: left;
+}
+
+#menu a {
+	text-decoration: none;
+	color: #383838;
+	font-size: 23px;
+	}

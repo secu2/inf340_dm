@@ -9,9 +9,9 @@
 	</head>
 	<body>
 		<p>
-			<a href=""><img src="./ressources/images/logo.png" alt="logo" /></a>
+			<a href=""><img src="<?php echo base_url('./ressources/images/logo.png'); ?>" alt="logo" /></a>
 		</p>
-		<ul>
+		<ul id="connexion">
 			<!-- Si l'utilisateur est connecté, afficher "Bonjour [pseudo]" et un lien vers la déconnexion -->
 			<?php ?>
 			<!-- Sinon afficher liens vers inscription et connexion -->
@@ -20,7 +20,7 @@
 			<li><a href="">Connexion</a></li>
 			<?php ?>
 		</ul>
-		<ul>
+		<ul id="menu">
 			<li><a href="">Accueil</a></li>
 			<li><a href="">Les stations</a></li>
 			<li><a href="">Votre compte</a></li>
