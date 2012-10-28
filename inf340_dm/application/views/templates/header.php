@@ -5,7 +5,7 @@
     <head>    
     <title> Dahu </title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <link href="<?php echo base_url('ressources/css/style.css'); ?>" rel="stylesheet" type="text/css" media="screen" />
 	</head>
 	<body>
 		<p>
