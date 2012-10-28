@@ -17,6 +17,15 @@ class Login_verify extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+	
+	function __construct() {
+		parent::__construct();
+		$this->load->library('doctrine');
+		$this->load->helper('html');
+		$this->load->helper('url');
+			
+	}
+	
 	public function index()
 	{
 		echo "verify login";

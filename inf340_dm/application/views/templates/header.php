@@ -12,7 +12,7 @@
 			<a href=""><img src="<?php echo base_url('./ressources/images/logo.png'); ?>" alt="logo" /></a>
 		</p>
 		<ul id="connexion">
-			<!-- Si l'utilisateur est connecté, afficher "Bonjour [pseudo]" et un lien vers la déconnexion -->
+			<!-- Si l'utilisateur est connectï¿½, afficher "Bonjour [pseudo]" et un lien vers la dï¿½connexion -->
 			<?php ?>
 			<!-- Sinon afficher liens vers inscription et connexion -->
 			<?php ?>
