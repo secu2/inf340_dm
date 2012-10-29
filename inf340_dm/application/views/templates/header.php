@@ -9,7 +9,10 @@
 	</head>
 	<body>
 		<p>
-			<a href=""><img src="<?php echo base_url('./ressources/images/logo.png'); ?>" alt="logo" /></a>
+			<a href="" id="logo"><img src="<?php echo base_url('./ressources/images/logo.png'); ?>" alt="logo" /></a>
+		</p>
+		<p id="dahu"> 
+			<img src="<?php echo base_url('./ressources/images/dahu.png'); ?>"/> 
 		</p>
 		<ul id="connexion">
 			<!-- Si l'utilisateur est connect�, afficher "Bonjour [pseudo]" et un lien vers la d�connexion -->
