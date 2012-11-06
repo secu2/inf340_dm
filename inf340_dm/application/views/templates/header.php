@@ -23,7 +23,7 @@
 			<li><a href="">D&eacute;connexion</a></li>
 			<!-- Sinon afficher liens vers inscription et connexion -->
 			<?php ?>
-			<li><a href=<?php echo site_url('inscription/');?>>Inscription</a></li>
+			<li><a href=<?php echo site_url('welcome/inscription/');?>>Inscription</a></li>
 			<li><a href=<?php echo site_url('login/');?>>Connexion</a></li>
 			<?php ?>
 		</ul>
@@ -31,8 +31,8 @@
 		
 		<ul id="menu">
 			<li><a href=<?php echo site_url();?>>Accueil</a></li>
-			<li><a href=<?php echo site_url('stations/');?>>Les stations</a></li>
-			<li><a href=<?php echo site_url('compte_user/');?>>Votre compte</a></li>
+			<li><a href=<?php echo site_url('welcome/stations/');?>>Les stations</a></li>
+			<li><a href=<?php echo site_url('welcome/compte_user/');?>>Votre compte</a></li>
 		</ul>
 		
 	</body>

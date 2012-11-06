@@ -23,8 +23,8 @@
 		
 		<ul id="menu">
 			<li><a href=<?php echo site_url();?>>Accueil</a></li>
-			<li><a href=<?php echo site_url('stations/');?>>Les stations</a></li>
-			<li><a href=<?php echo site_url('compte_user/');?>>Votre compte</a></li>
+			<li><a href=<?php echo site_url('welcome/stations/');?>>Les stations</a></li>
+			<li><a href=<?php echo site_url('welcome/compte_user/');?>>Votre compte</a></li>
 		</ul>
 		
 	</body>
