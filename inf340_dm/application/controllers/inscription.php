@@ -12,7 +12,6 @@ class Login extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->helper('url');
 		$this->load->view('templates/header_inscription');
 		$this->load->view('backoffice/inscription_view');
 		$this->load->view('templates/footer');
