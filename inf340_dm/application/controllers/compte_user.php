@@ -12,7 +12,6 @@ class Login extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->helper('url');
 		//Si l'utilisateur n'est pas connecté, on le renvoit sur la page de connexion avec un message d'erreur
 		$this->load->view('templates/header_connexion');
 		$this->load->view('backoffice/login_needed_view');
