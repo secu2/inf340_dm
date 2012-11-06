@@ -33,6 +33,30 @@ class Welcome extends CI_Controller {
 		$this->load->view('index');
 		$this->load->view('templates/footer');
 	}
+	
+	public function inscription()
+	{
+		$this->load->helper('url');
+		$this->load->view('backoffice/templates/header_inscription');
+		$this->load->view('backoffice/inscription_view');
+		$this->load->view('templates/footer');
+	}
+	
+	public function connexion()
+	{
+		$this->load->helper('url');
+		$this->load->view('backoffice/templates/header_connexion');
+		$this->load->view('modules/login');
+		$this->load->view('templates/footer');
+	}
+	
+	public function stations()
+	{
+		$this->load->helper('url');
+		$this->load->view('templates/header');
+		$this->load->view('frontoffice/stations_view');
+		$this->load->view('templates/footer');
+	}
 }
 
 /* End of file welcome.php */
