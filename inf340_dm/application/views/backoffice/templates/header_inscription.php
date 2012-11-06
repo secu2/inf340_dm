@@ -17,15 +17,7 @@
 		</p>
 		
 		<ul id="connexion">
-			<!-- Si l'utilisateur est connecte, afficher "Bonjour [pseudo]" et un lien vers la deconnexion -->
-			<?php ?>
-			<li>Bonjour [...]</li>
-			<li><a href="">D&eacute;connexion</a></li>
-			<!-- Sinon afficher liens vers inscription et connexion -->
-			<?php ?>
-			<li><a href=<?php echo site_url('welcome/inscription/');?>>Inscription</a></li>
 			<li><a href=<?php echo site_url('welcome/connexion/');?>>Connexion</a></li>
-			<?php ?>
 		</ul>
 		</div>	
 		
