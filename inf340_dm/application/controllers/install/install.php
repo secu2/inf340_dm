@@ -28,7 +28,8 @@ class Install extends CI_Controller {
 		
 		);
 		$tool->createSchema($classes);
-
+		
+		
 	}
 
 

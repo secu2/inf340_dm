@@ -33,42 +33,6 @@ class Welcome extends CI_Controller {
 		$this->load->view('index');
 		$this->load->view('templates/footer');
 	}
-	
-	public function inscription()
-	{
-		$this->load->helper('url');
-		$this->load->view('backoffice/templates/header_inscription');
-		$this->load->view('backoffice/inscription_view');
-		$this->load->view('templates/footer');
-	}
-	
-	public function connexion()
-	{
-		$this->load->helper('url');
-		$this->load->view('backoffice/templates/header_connexion');
-		$this->load->view('modules/login');
-		$this->load->view('templates/footer');
-	}
-	
-	public function stations()
-	{
-		$this->load->helper('url');
-		$this->load->view('templates/header');
-		$this->load->view('frontoffice/stations_view');
-		$this->load->view('templates/footer');
-	}
-	
-	public function compte()
-	{
-		$this->load->helper('url');
-		//Si l'utilisateur n'est pas connecté, on le renvoit sur la page de connexion avec un message d'erreur
-		$this->load->view('backoffice/templates/header_connexion');
-		$this->load->view('backoffice/login_needed_view');
-		$this->load->view('modules/login');
-		//Sinon on l'envoit sur la page de son compte
-		
-		$this->load->view('templates/footer');
-	}
 }
 
 /* End of file welcome.php */
