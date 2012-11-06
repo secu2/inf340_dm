@@ -64,7 +64,6 @@ class Utilisateur
     	$this->login = $login;
     	$this->level=$level;
     	$this->password=$this->encryptPassword($password);
-    	$this->description=$description;
     	$this->stationNom=new ArrayCollection;
     }
     
@@ -97,7 +96,7 @@ class Utilisateur
      * @return \Doctrine\Common\Collections\ArrayCollection les images de l'utilisateur.
      */
     public function getStations(){
-    	return  $this->images;
+    	return  $this->stationNom;
     }
     
     /**
