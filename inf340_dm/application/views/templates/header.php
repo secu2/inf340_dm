@@ -8,6 +8,7 @@
     <link href="<?php echo base_url('ressources/css/style.css'); ?>" rel="stylesheet" type="text/css" media="screen" />
 	</head>
 	<body>
+	<div id="haut">
 		<p id="dahu"> 
 			<img src="<?php echo base_url('./ressources/images/dahu.png'); ?>"/> 
 		</p>
@@ -24,18 +25,13 @@
 			<li><a href="">Connexion</a></li>
 			<?php ?>
 		</ul>
+		</div>	
+		
 		<ul id="menu">
 			<li><a href="">Accueil</a></li>
 			<li><a href="">Les stations</a></li>
 			<li><a href="">Votre compte</a></li>
 		</ul>
-		<table>
-			<tr>
-				<th>News</th>
-			</tr>
-			<tr>
-				<td> 01/01/01 - Ouverture du site</td>
-			</tr>
-		</table>
+		
 	</body>
 </html>
