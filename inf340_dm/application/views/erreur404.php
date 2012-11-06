@@ -11,7 +11,8 @@ body {
 	background-attachment: fixed;
 	background-image:
 		url('http://adamwhitcroft.com/wp-content/themes/Fifth/img/dot.png'),
-		url('http://i.imgur.com/hlgyq.gif');
+		url('http://i.imgur.com/1n8zR.gif');
+		/* url('http://i.imgur.com/hlgyq.gif'); */
 	background-position: 50% 50%;
 	background-size: auto, cover;
 	font-size: 100%;

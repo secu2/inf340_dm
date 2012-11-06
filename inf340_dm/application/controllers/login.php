@@ -4,6 +4,7 @@ class Login extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
+		$this->load->library('session');
 		$this->load->library('doctrine');
 		$this->load->helper('html');
 		$this->load->helper('url');
@@ -22,9 +23,9 @@ class Login extends CI_Controller {
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 		echo '<u>User:</u> ' . $username . ' - <u>Password:</u> ' . $password;
-		/* $em = $this->doctrine->em;
+		$em = $this->doctrine->em;
 		$utilisateurRepository = $em->getRepository('models\Utilisateur');
-		$authOk=$utilisateurRepository->authenticate($username,$password); */
+		$authOk=$utilisateurRepository->authenticate($username,$password);
 	}
 }
 
