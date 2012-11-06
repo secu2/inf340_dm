@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Login_form extends CI_Controller {
+class Login extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
@@ -15,6 +15,16 @@ class Login_form extends CI_Controller {
 		$this->load->view('templates/header');
 		$this->load->view('modules/login');
 		$this->load->view('templates/footer');
+	}
+	
+	public function verify()
+	{
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		echo '<u>User:</u> ' . $username . ' - <u>Password:</u> ' . $password;
+		/* $em = $this->doctrine->em;
+		$utilisateurRepository = $em->getRepository('models\Utilisateur');
+		$authOk=$utilisateurRepository->authenticate($username,$password); */
 	}
 }
 
