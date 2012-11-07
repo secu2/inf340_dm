@@ -10,16 +10,16 @@ body {
 }
 
 #logo {
-	position: relative;
+	float: left;
 	margin-left: 100px;
-	margin-top: -70px;
+	margin-top: 20px;
 	
 }
 
 #dahu {
 	position: relative;
 	margin-right: 10px;
-	margin-top: 0px;
+	margin-top: 20px;
 	margin-left: 200px;
 }
 
@@ -30,6 +30,23 @@ body {
     -o-transform: rotate(17deg) ;
     -ms-transform: rotate(17deg) ;
 }
+
+#connexion {
+	list-style: none;
+	float: right;
+	margin-top: -120px;
+	margin-right: 20px;
+}
+
+#connexion li {
+	display: inline;
+	margin-right: 8px;
+}
+
+#connexion a {
+	color: grey;
+}
+
 
 #menu{
    display: table;

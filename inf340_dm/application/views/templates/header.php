@@ -7,13 +7,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="<?php echo base_url('ressources/css/style.css'); ?>" rel="stylesheet" type="text/css" media="screen" />
 	</head>
+	
 	<body>
 	<div id="haut">
-		<p id="dahu"> 
-			<img src="<?php echo base_url('./ressources/images/dahu.png'); ?>"/> 
-		</p>
 		<p>
 			<a href=<?php echo base_url();?> id="logo"><img src="<?php echo base_url('./ressources/images/logo.png'); ?>" alt="logo" /></a>
+		</p>
+		<p id="dahu"> 
+			<img src="<?php echo base_url('./ressources/images/dahu.png'); ?>"/> 
 		</p>
 		
 		<ul id="connexion">
