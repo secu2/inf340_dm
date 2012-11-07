@@ -59,7 +59,7 @@ class Utilisateur
     /**
      * Constructor
      */
-    public function __construct($login,$password, $level, $description){
+    public function __construct($login,$password, $level, $stationNom){
     
     	$this->login = $login;
     	$this->level=$level;
