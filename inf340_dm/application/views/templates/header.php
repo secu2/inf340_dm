@@ -28,7 +28,7 @@
 			<li><a href=<?php echo site_url('login/');?>>Connexion</a></li>
 			<?php ?>
 		</ul>
-		</div>	
+	</div>	
 		
 		<ul id="menu">
 			<li><a href=<?php echo site_url();?>>Accueil</a></li>
