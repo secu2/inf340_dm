@@ -28,7 +28,7 @@ class Install extends CI_Controller {
 				$em->getClassMetadata('\models\Station'),
 				$em->getClassMetadata('\models\Utilisateur'),
 				$em->getClassMetadata('\models\Image'),
-				
+				$em->getClassMetadata('\models\Commentaire'),
 		
 		);
 		$tool->createSchema($classes);

@@ -27,12 +27,7 @@ class Station
      */
     private $description;
 
-    /**
-     * @var \Doctrine\Common\Collections\ArrayCollection
-     *
-     * @ManyToMany(targetEntity="Utilisateur", mappedBy="stationNom")
-     */
-    private $utilisateur;
+    
 
     /**
      * @var Departement
@@ -49,7 +44,7 @@ class Station
      */
     public function __construct()
     {
-        $this->utilisateur = new \Doctrine\Common\Collections\ArrayCollection();
+        
     }
     
 }

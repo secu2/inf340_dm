@@ -40,22 +40,8 @@ class Utilisateur
      * @Column(name="level", type="integer", nullable=false)
      */
     private $level;
-
-    /**
-     * @var \Doctrine\Common\Collections\ArrayCollection
-     *
-     * @ManyToMany(targetEntity="Station", inversedBy="utilisateur")
-     * @JoinTable(name="commentaire",
-     *   joinColumns={
-     *     @JoinColumn(name="utilisateur_id", referencedColumnName="id", nullable=false)
-     *   },
-     *   inverseJoinColumns={
-     *     @JoinColumn(name="station_nom", referencedColumnName="nom", nullable=false)
-     *   }
-     * )
-     */
-    private $stationNom;
-
+	
+	
     /**
      * Constructor
      */
@@ -64,7 +50,7 @@ class Utilisateur
     	$this->login = $login;
     	$this->level=$level;
     	$this->password=$this->encryptPassword($password);
-    	$this->stationNom=new ArrayCollection;
+    	//$this->stationNom=new ArrayCollection;
     }
     
     /**
@@ -90,14 +76,7 @@ class Utilisateur
     public function getLevel() {
     	return $this->level;
     }
-    
-    /**
-     * Permet de récuperer les images de l'utilisateur
-     * @return \Doctrine\Common\Collections\ArrayCollection les images de l'utilisateur.
-     */
-    public function getStations(){
-    	return  $this->stationNom;
-    }
+   
     
     /**
      * Permet de modifier le login
