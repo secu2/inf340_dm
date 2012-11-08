@@ -30,11 +30,10 @@
 		</ul>
 	</div>	
 		
-		<ul id="menu">
-			<li><a href=<?php echo site_url();?>>Accueil</a></li>
-			<li><a href=<?php echo site_url('welcome/stations/');?>>Les stations</a></li>
-			<li><a href=<?php echo site_url('welcome/compte_user/');?>>Votre compte</a></li>
-		</ul>
-		
-	</body>
-</html>
+	<ul id="menu">
+		<li><a href=<?php echo site_url();?>>Accueil</a></li>
+		<li><a href=<?php echo site_url('welcome/stations/');?>>Les stations</a></li>
+		<li><a href=<?php echo site_url('welcome/compte_user/');?>>Votre compte</a></li>
+	</ul>
+	
+	<div id="contenu">
