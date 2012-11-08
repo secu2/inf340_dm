@@ -17,7 +17,7 @@ class Departement
      *
      * @Column(name="numero", type="string", length=3, nullable=false)
      * @Id
-     * @GeneratedValue(strategy="IDENTITY")
+     * @GeneratedValue(strategy="NONE")
      */
     private $numero;
 

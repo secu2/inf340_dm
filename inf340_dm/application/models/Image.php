@@ -32,7 +32,7 @@ class Image
      *
      * @ManyToOne(targetEntity="Station")
      * @JoinColumns({
-     *   @JoinColumn(name="station_nom", referencedColumnName="nom")
+     *   @JoinColumn(name="station_nom", referencedColumnName="nom", nullable=false)
      * })
      */
     private $stationNom;

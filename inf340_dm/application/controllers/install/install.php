@@ -24,7 +24,11 @@ class Install extends CI_Controller {
 		$tool->dropDatabase();
 	  
 		$classes = array(
-		$em->getClassMetadata('\models\Departement')
+		$em->getClassMetadata('\models\Departement'),
+				$em->getClassMetadata('\models\Station'),
+				$em->getClassMetadata('\models\Utilisateur'),
+				$em->getClassMetadata('\models\Image'),
+				
 		
 		);
 		$tool->createSchema($classes);

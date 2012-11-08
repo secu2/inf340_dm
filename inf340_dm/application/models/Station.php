@@ -1,7 +1,7 @@
 <?php
 
 
-
+namespace models;
 
 /**
  * Station
@@ -16,7 +16,7 @@ class Station
      *
      * @Column(name="nom", type="string", length=100, nullable=false)
      * @Id
-     * @GeneratedValue(strategy="IDENTITY")
+     * @GeneratedValue(strategy="NONE")
      */
     private $nom;
 
@@ -39,7 +39,7 @@ class Station
      *
      * @ManyToOne(targetEntity="Departement")
      * @JoinColumns({
-     *   @JoinColumn(name="departement_numero", referencedColumnName="numero")
+     *   @JoinColumn(name="departement_numero", referencedColumnName="numero", nullable=false)
      * })
      */
     private $departementNumero;

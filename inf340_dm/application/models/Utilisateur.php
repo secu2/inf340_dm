@@ -1,7 +1,7 @@
 <?php
 
 
-
+namespace models;
 
 /**
  * Utilisateur
@@ -47,10 +47,10 @@ class Utilisateur
      * @ManyToMany(targetEntity="Station", inversedBy="utilisateur")
      * @JoinTable(name="commentaire",
      *   joinColumns={
-     *     @JoinColumn(name="utilisateur_id", referencedColumnName="id")
+     *     @JoinColumn(name="utilisateur_id", referencedColumnName="id", nullable=false)
      *   },
      *   inverseJoinColumns={
-     *     @JoinColumn(name="station_nom", referencedColumnName="nom")
+     *     @JoinColumn(name="station_nom", referencedColumnName="nom", nullable=false)
      *   }
      * )
      */
