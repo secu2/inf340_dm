@@ -7,7 +7,7 @@ namespace models;
  * Station
  *
  * @Table(name="station")
- * @Entity
+ * @Entity (repositoryClass="\models\repositories\StationRepository")
  */
 class Station
 {
@@ -27,8 +27,6 @@ class Station
      */
     private $description;
 
-    
-
     /**
      * @var Departement
      *
@@ -38,6 +36,11 @@ class Station
      * })
      */
     private $departementNumero;
+    
+    /**
+     * @OneToMany(targetEntity="Image", mappedBy="station")
+     */
+    private $images;
 
     /**
      * Constructor

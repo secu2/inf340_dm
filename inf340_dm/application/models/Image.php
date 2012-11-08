@@ -7,7 +7,7 @@ namespace models;
  * Image
  *
  * @Table(name="image")
- * @Entity
+ * @Entity (repositoryClass="\models\repositories\ImageRepository")
  */
 class Image
 {
@@ -32,7 +32,7 @@ class Image
      *
      * @ManyToOne(targetEntity="Station")
      * @JoinColumns({
-     *   @JoinColumn(name="station_nom", referencedColumnName="nom", nullable=false)
+     *   @JoinColumn(name="station_nom", referencedColumnName="nom", onDelete = "Cascade")
      * })
      */
     private $stationNom;

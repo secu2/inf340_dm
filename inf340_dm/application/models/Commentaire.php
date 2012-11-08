@@ -8,7 +8,7 @@ namespace models;
  * Utilisateur
  *
  *@Table(name="Commentaire")
- *@Entity
+ *@Entity (repositoryClass="\models\repositories\CommentaireRepository")
  */
 class Commentaire
 {

@@ -7,7 +7,7 @@ namespace models;
  * Utilisateur
  *
  * @Table(name="utilisateur")
- * @Entity
+ * @Entity (repositoryClass="\models\repositories\UtilisateurRepository")
  */
 class Utilisateur
 {

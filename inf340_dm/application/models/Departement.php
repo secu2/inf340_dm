@@ -8,7 +8,7 @@ namespace models;
  * Departement
  *
  * @Table(name="departement")
- * @Entity
+ * @Entity (repositoryClass="\models\repositories\DepartementRepository")
  */
 class Departement
 {
@@ -27,6 +27,11 @@ class Departement
      * @Column(name="nom", type="string", length=45, nullable=false)
      */
     private $nom;
+    
+    /**
+     * @OneToMany(targetEntity="Station", mappedBy="departement")
+     */
+    private $stations;
 
 
 }
