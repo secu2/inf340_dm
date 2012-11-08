@@ -13,7 +13,7 @@ class Login extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->view('templates/header_connexion');
+		$this->load->view('templates/header');
 		$this->load->view('modules/login');
 		$this->load->view('templates/footer');
 	}

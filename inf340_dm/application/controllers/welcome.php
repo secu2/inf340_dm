@@ -36,7 +36,7 @@ class Welcome extends CI_Controller {
 	
 	public function inscription()
 	{
-		$this->load->view('templates/header_inscription');
+		$this->load->view('templates/header');
 		$this->load->view('backoffice/inscription_view');
 		$this->load->view('templates/footer');
 	}
@@ -51,7 +51,7 @@ class Welcome extends CI_Controller {
 	public function compte_user()
 	{
 		//Si l'utilisateur n'est pas connecté, on le renvoit sur la page de connexion avec un message d'erreur
-		$this->load->view('templates/header_connexion');
+		$this->load->view('templates/header');
 		$this->load->view('backoffice/login_needed_view');
 		$this->load->view('modules/login');
 		//Sinon on l'envoit sur la page de son compte
