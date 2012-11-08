@@ -33,6 +33,15 @@ class Install extends CI_Controller {
 		);
 		$tool->createSchema($classes);
 		
+		//peuplement de la base
+		$user1 = new Utilisateur('normal', 'normal', '0');
+		$user2 = new Utilisateur('modo', 'modo', '1');
+		$user3 = new Utilisateur('admin', 'admin', '2');
+		$em->persist($user1);
+		$em->persist($user2);
+		$em->persist($user3);
+		$em->flush();
+		
 		
 	}
 

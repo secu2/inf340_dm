@@ -45,12 +45,11 @@ class Utilisateur
     /**
      * Constructor
      */
-    public function __construct($login,$password, $level, $stationNom){
+    public function __construct($login,$password, $level){
     
     	$this->login = $login;
     	$this->level=$level;
     	$this->password=$this->encryptPassword($password);
-    	//$this->stationNom=new ArrayCollection;
     }
     
     /**
