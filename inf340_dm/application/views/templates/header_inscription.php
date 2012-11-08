@@ -19,7 +19,7 @@
 		<ul id="connexion">
 			<li><a href=<?php echo site_url('login/');?>>Connexion</a></li>
 		</ul>
-		</div>	
+	</div>	
 		
 		<ul id="menu">
 			<li><a href=<?php echo site_url();?>>Accueil</a></li>
