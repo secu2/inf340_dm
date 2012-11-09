@@ -72,7 +72,7 @@ class User extends CI_Controller {
 			$this->session->set_userdata('loggedin', array('id'=>$utilisateur->getId()) );
 			redirect('/');
 		}else{
-			//Que l'authentification est réussie ou non, l'on est redirigé vers le contôleur Accueil qui via le controleur hérité vérifiera si l'authentification a réussie.
+			// Que l'authentification est réussie ou non, l'on est redirigé vers le contôleur Accueil qui via le controleur hérité vérifiera si l'authentification a réussie.
 			redirect('/login');
 		}
 	}
