@@ -42,4 +42,17 @@ class UtilisateurRepository extends \Doctrine\ORM\EntityRepository {
 		return $res;
 	}
 	
+	/**
+	 * Permet à partir du 'lidentifiant de récuperer un utilisateur.
+	 * L'opération est posible car le l'identifiant est unique
+	 * @param unknown_type $id l'identifiant de l'utilisateur recherché
+	 * @return l'utilisateur correspondant à l'identifiant
+	 */
+	public function getUtilisateurById($id)
+	{
+		$em = $this->getEntityManager();
+		$utilisateur = $this->findOneById($id);
+		return $utilisateur;
+	}
+	
 }

@@ -20,7 +20,13 @@
 		<ul id="connexion">
 			<!-- Si l'utilisateur est connecte, afficher "Bonjour [pseudo]" et un lien vers la deconnexion -->
 			<?php ?>
-			<li>Bonjour [...]</li>
+			<li>Bonjour [
+			<?php 
+			if(isset($utilisateur)){
+				echo $utilisateur->getLogin(); 
+			} 
+			?>
+			]</li>
 			<li><a href="">D&eacute;connexion</a></li>
 			<!-- Sinon afficher liens vers inscription et connexion -->
 			<?php ?>
