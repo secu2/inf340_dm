@@ -25,11 +25,11 @@ body {
 }
 
 #dahu :hover {
-    transform: rotate(17deg) ;
-    -webkit-transform: rotate(17deg) ;
-    -moz-transform: rotate(17deg) ;
-    -o-transform: rotate(17deg) ;
-    -ms-transform: rotate(17deg) ;
+    transform: rotate(-25deg) ;
+    -webkit-transform: rotate(-25deg) ;
+    -moz-transform: rotate(-25deg) ;
+    -o-transform: rotate(-25deg) ;
+    -ms-transform: rotate(-25deg) ;
 }
 
 #connexion {

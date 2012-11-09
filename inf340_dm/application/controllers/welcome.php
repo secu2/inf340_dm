@@ -72,13 +72,7 @@ class Welcome extends CI_Controller {
 	
 	public function compte_user()
 	{
-		//Si l'utilisateur n'est pas connect�, on le renvoit sur la page de connexion avec un message d'erreur
-		$this->load->view('templates/header');
-		$this->load->view('backoffice/login_needed_view');
-		$this->load->view('modules/login');
-		//Sinon on l'envoit sur la page de son compte
-	
-		$this->load->view('templates/footer');
+		redirect(user);
 	}
 }
 

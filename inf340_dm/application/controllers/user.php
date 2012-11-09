@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Login extends CI_Controller {
+class User extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
@@ -10,14 +10,19 @@ class Login extends CI_Controller {
 		$this->load->helper('url');
 			
 	}
-	
+
 	public function index()
 	{
-		$this->load->view('templates/header');
-		$this->load->view('modules/login');
-		$this->load->view('templates/footer');
+		$varsession = $this->session->userdata('loggedin');
+		if(isset($varsession['id'])){
+			echo 'gestion compte';
+		}else{
+			$this->load->view('templates/header');
+			$this->load->view('modules/login');
+			$this->load->view('templates/footer');
+		}
 	}
-	
+
 	public function verify()
 	{
 		$username = $this->input->post('username');
@@ -36,15 +41,15 @@ class Login extends CI_Controller {
 			$this->session->set_userdata('loggedin', array('id'=>$utilisateur->getId()) );
 			redirect('/');
 		}else{
-		//Que l'authentification est réussie ou non, l'on est redirigé vers le contôleur Accueil qui via le controleur hérité vérifiera si l'authentification a réussie.
-		redirect('/login');
+			//Que l'authentification est réussie ou non, l'on est redirigé vers le contôleur Accueil qui via le controleur hérité vérifiera si l'authentification a réussie.
+			redirect('/login');
 		}
 	}
-	
+
 	function logout()
 	{
 		$this->session->unset_userdata('loggedin');
-	
+
 		redirect('/');
 	}
 }
