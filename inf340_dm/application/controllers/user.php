@@ -22,6 +22,37 @@ class User extends CI_Controller {
 			$this->load->view('templates/footer');
 		}
 	}
+	
+	public function register()
+	{
+		$this->load->view('templates/header');
+		if($this->input->post('username') == FALSE || $this->input->post('password') == FALSE){
+			//Si je ne recoit pas les infos en POST, j'affiche le formulaire
+			$this->load->view('modules/register');
+		}
+		else{
+			//Si je recois les données en POST je les stocke dans un tableau
+			$data['username'] = $this->input->post('username');
+			$data['password'] = $this->input->post('password');
+			$data['password_verify'] = $this->input->post('password_verify');
+			$em = $this->doctrine->em;
+			$repository = $em->getRepository('models\Utilisateur');
+			// Je verifie que les deux mots de passe correspondent
+			if($data['password'] == $data['password_verify']){
+				$repository->create($data['username'] , $data['password'] , '1');
+				$this->load->view('notifications/register_ok_view');
+			}else{
+				//Si les deux mots de passe ne correspondent pas, je renvoie le formulaire en envoyant l'erreur
+				$post['error_id'] = 'Les deux mots de passe ne correspondent pas, veuillez réessayer';
+				//J'envoie aussi le username histoire de pas avoir à le taper à nouveau
+				$post['username'] = $this->input->post('username');
+				$this->load->view('modules/register', $post);
+			
+			}
+		}
+		$this->load->view('templates/footer');
+		
+	}
 
 	public function verify()
 	{

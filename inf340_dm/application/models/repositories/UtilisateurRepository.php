@@ -8,11 +8,20 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class UtilisateurRepository extends \Doctrine\ORM\EntityRepository {
 
-	public function create(){
-		$utilisateur = new \models\Utilisateur();
-		$this->getEntityManager()->persist($utilisateur);
-		$this->getEntityManager()->flush();
-		return $a;
+	public function create($username, $password, $level){
+	$em = $this->getEntityManager();
+		//creation d'un utilisateur
+		//TODO
+		//--------------------------------------------------------------------------------------------------------------
+		$repository = $em->getRepository('models\Utilisateur');
+		$utilisateur = new \models\Utilisateur($username, $password, $level);
+		$em->persist($utilisateur);
+		//--------------------------------------------------------------------------------------------------------------
+		try {
+			$em->flush();
+		} catch (\Exception $e) {
+			//echo $e->getMessage();
+		}
 	}
 	
 	public function add($id,$nom, $texte){

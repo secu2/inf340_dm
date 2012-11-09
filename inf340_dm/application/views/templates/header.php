@@ -24,7 +24,7 @@
 			<li><a href=<?php echo site_url();?>>Accueil</a></li>
 			<li><a href=<?php echo site_url('welcome/stations/');?>>Les stations</a>
 			</li>
-			<li><a href=<?php echo site_url('welcome/compte_user/');?>>Votre
+			<li><a href=<?php echo site_url('user/');?>>Votre
 					compte</a></li>
 		</ul>
 	</div>
@@ -41,9 +41,9 @@
 			</li>
 			<!-- Sinon afficher liens vers inscription et connexion -->
 			<?php }else{ ?>
-			<li><a href=<?php echo site_url('welcome/inscription/');?>>Inscription</a>
+			<li><a href=<?php echo site_url('user/register/');?>>Inscription</a>
 			</li>
-			<li><a href=<?php echo site_url('login/');?>>Connexion</a></li>
+			<li><a href=<?php echo site_url('user/');?>>Connexion</a></li>
 			<?php } ?>
 		</ul>
 
