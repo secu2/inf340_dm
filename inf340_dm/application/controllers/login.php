@@ -26,6 +26,18 @@ class Login extends CI_Controller {
 		$em = $this->doctrine->em;
 		$utilisateurRepository = $em->getRepository('models\Utilisateur');
 		$authOk=$utilisateurRepository->authenticate($username,$password);
+
+
+
+		if ($authOk)
+		{
+			//l'id utilisateur est obtenu à partir de son login
+			$utilisateur = $utilisateurRepository->findOneByLogin($login);
+			//la variable de session loggedin contiend un tableau qui à la clef id associe l'identifiant de l'utilisateur qui vient de s'authentifier.
+			$this->session->set_userdata('loggedin', array('id'=>$utilisateur->getId()) );
+		}
+		//Que l'authentification est réussie ou non, l'on est redirigé vers le contôleur Accueil qui via le controleur hérité vérifiera si l'authentification a réussie.
+		redirect('/login');
 	}
 }
 

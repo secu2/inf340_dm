@@ -2,7 +2,7 @@
 namespace models\repositories;
 use Doctrine\Common\Collections\ArrayCollection;
 /**
- * Le dépôt utilisateur
+ * Le dï¿½pï¿½t utilisateur
  * @author jub
  *
  */
@@ -24,6 +24,22 @@ class UtilisateurRepository extends \Doctrine\ORM\EntityRepository {
 	
 	public function getStationByUtilisateur($id){
 		return $this->getEntityManager()->getRepository('\models\Commentaire')->getStationByUtilisateur($id);
+	}
+	
+	public function authenticate($login, $password)
+	{
+		$CI = & get_instance();
+		$CI->load->library('encrypt');
+		$utilisateur = $this->findOneByLogin($login);
+			
+		$res = FALSE;
+		if ($utilisateur != NULL)
+		{
+				
+			$res = $utilisateur->authenticate($password);
+				
+		}
+		return $res;
 	}
 	
 }
