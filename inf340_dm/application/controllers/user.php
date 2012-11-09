@@ -66,9 +66,9 @@ class User extends CI_Controller {
 
 		if ($authOk)
 		{
-			//l'id utilisateur est obtenu à partir de son login
+			// l'id utilisateur est obtenu à partir de son login
 			$utilisateur = $utilisateurRepository->findOneByLogin($username);
-			//la variable de session loggedin contiend un tableau qui à la clef id associe l'identifiant de l'utilisateur qui vient de s'authentifier.
+			// la variable de session loggedin contiend un tableau qui à la clef id associe l'identifiant de l'utilisateur qui vient de s'authentifier.
 			$this->session->set_userdata('loggedin', array('id'=>$utilisateur->getId()) );
 			redirect('/');
 		}else{
