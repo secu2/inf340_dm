@@ -16,7 +16,9 @@
 		<p id="dahu"> 
 			<img src="<?php echo base_url('./ressources/images/dahu.png'); ?>"/> 
 		</p>
-		
+	</div>
+	
+	<div id="contenu">
 		<ul id="connexion">
 			<!-- Si l'utilisateur est connecte, afficher "Bonjour [pseudo]" et un lien vers la deconnexion -->
 			<?php ?>
@@ -28,7 +30,7 @@
 			<li><a href=<?php echo site_url('login/');?>>Connexion</a></li>
 			<?php ?>
 		</ul>
-	</div>	
+	
 		
 	<ul id="menu">
 		<li><a href=<?php echo site_url();?>>Accueil</a></li>
@@ -36,4 +38,4 @@
 		<li><a href=<?php echo site_url('welcome/compte_user/');?>>Votre compte</a></li>
 	</ul>
 	
-	<div id="contenu">
+	<div id="texte">	
