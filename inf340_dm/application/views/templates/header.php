@@ -19,6 +19,14 @@
 		<p id="dahu">
 			<img src="<?php echo base_url('./ressources/images/dahu.png'); ?>" />
 		</p>
+		
+		<ul id="menu">
+			<li><a href=<?php echo site_url();?>>Accueil</a></li>
+			<li><a href=<?php echo site_url('welcome/stations/');?>>Les stations</a>
+			</li>
+			<li><a href=<?php echo site_url('welcome/compte_user/');?>>Votre
+					compte</a></li>
+		</ul>
 	</div>
 
 	<div id="contenu">
@@ -38,14 +46,6 @@
 			<li><a href=<?php echo site_url('login/');?>>Connexion</a></li>
 			<?php } ?>
 		</ul>
-		<ul id="menu">
-			<li><a href=<?php echo site_url();?>>Accueil</a></li>
-			<li><a href=<?php echo site_url('welcome/stations/');?>>Les stations</a>
-			</li>
-			<li><a href=<?php echo site_url('welcome/compte_user/');?>>Votre
-					compte</a></li>
-		</ul>
-
 
 
 		<div id="texte">
