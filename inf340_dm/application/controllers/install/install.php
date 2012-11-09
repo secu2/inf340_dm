@@ -34,6 +34,8 @@ class Install extends CI_Controller {
 		$tool->createSchema($classes);
 		
 		//peuplement de la base
+		
+		//Utilisateurs
 		$user1 = new Utilisateur('normal', 'normal', '0');
 		$user2 = new Utilisateur('modo', 'modo', '1');
 		$user3 = new Utilisateur('admin', 'admin', '2');
@@ -42,6 +44,10 @@ class Install extends CI_Controller {
 		$em->persist($user3);
 		$em->flush();
 		
+		//Commentatires
+		/* $comment1 = new models\Commentaire('1','admin','Commentaire exemple');
+		$em->persist($comment1);
+		$em->flush(); */
 		
 	}
 

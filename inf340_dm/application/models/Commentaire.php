@@ -36,25 +36,25 @@ class Commentaire
     /**
      * @var string $parameter
      *
-     *@Column(name="texte", type="string", length=100)
+     *@Column(name="data", type="string", length=100)
      *
      */
-    private $texte;
+    private $data;
     
     
     
-    public function __construct($id, $nom, $texte){
+    public function __construct($id, $nom, $data){
     	$this->id = $id;
     	$this->nom = $nom;	
-    	$this->texte = $texte;
+    	$this->data = $data;
     }
     
-    public function getTexte(){
-    	return $this->texte;
+    public function getData(){
+    	return $this->data;
     }
     
-    public function setTexte($texte){
-    	$this->texte = $texte;
+    public function setData($data){
+    	$this->data = $data;
     }
     
     public function getId(){
