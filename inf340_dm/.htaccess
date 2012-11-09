@@ -2,9 +2,9 @@
     RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ /inf340_dm/inf340_dm/index.php/$1 [L]
+    RewriteRule ^(.*)$ /dm/index.php/$1 [L]
 </IfModule>
 <IfModule !mod_rewrite.c>
-    ErrorDocument 404 /inf340_dm/inf340_dm/ressources/404.html
+    ErrorDocument 404 /dm/ressources/404.html
 </IfModule>
 Options +MultiViews
