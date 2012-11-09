@@ -34,9 +34,18 @@ class Login extends CI_Controller {
 			$utilisateur = $utilisateurRepository->findOneByLogin($username);
 			//la variable de session loggedin contiend un tableau qui à la clef id associe l'identifiant de l'utilisateur qui vient de s'authentifier.
 			$this->session->set_userdata('loggedin', array('id'=>$utilisateur->getId()) );
-		}
+			redirect('/');
+		}else{
 		//Que l'authentification est réussie ou non, l'on est redirigé vers le contôleur Accueil qui via le controleur hérité vérifiera si l'authentification a réussie.
 		redirect('/login');
+		}
+	}
+	
+	function logout()
+	{
+		$this->session->unset_userdata('loggedin');
+	
+		redirect('/');
 	}
 }
 

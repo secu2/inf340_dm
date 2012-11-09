@@ -21,20 +21,14 @@
 	<div id="contenu">
 		<ul id="connexion">
 			<!-- Si l'utilisateur est connecte, afficher "Bonjour [pseudo]" et un lien vers la deconnexion -->
-			<?php ?>
-			<li>Bonjour [
-			<?php 
-			if(isset($utilisateur)){
-				echo $utilisateur->getLogin(); 
-			} 
-			?>
-			]</li>
-			<li><a href="">D&eacute;connexion</a></li>
+			<?php if(isset($utilisateur)){ ?>
+			<li>Bonjour [<?php echo $utilisateur->getLogin(); ?>]</li>
+			<li><a href="<?php echo site_url('login/logout');?>">D&eacute;connexion</a></li>
 			<!-- Sinon afficher liens vers inscription et connexion -->
-			<?php ?>
+			<?php }else{ ?>
 			<li><a href=<?php echo site_url('welcome/inscription/');?>>Inscription</a></li>
 			<li><a href=<?php echo site_url('login/');?>>Connexion</a></li>
-			<?php ?>
+			<?php } ?>
 		</ul>
 	
 		
