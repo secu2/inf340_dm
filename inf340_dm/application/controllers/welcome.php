@@ -23,13 +23,35 @@ class Welcome extends CI_Controller {
 		$this->load->library('doctrine');
 		$this->load->helper('html');
 		$this->load->helper('url');
+		$this->load->library('session');
 			
 	}
 	
 	public function index()
 	{
+		
+		/* $em = $this->doctrine->em;
+		$utilisateurRepository = $em->getRepository('models\Utilisateur');
+		$session = $this->session->userdata('loggedin');
+		echo $session['id'];
+		$utilisateur = $utilisateurRepository->getUtilisateurById($session['id']);
+		$data['login']= $utilisateur; */
+		
+		//recuperation de la variable de session loggedin positionnee par backoffice/session
+		$varsession = $this->session->userdata('loggedin');
+		$id = $varsession['id'];
+		//recupere le gestionnaire d'entite
+		$em = $this->doctrine->em;
+		//recupere le depot utilisateur
+		$repository = $em->getRepository('models\Utilisateur');
+		//trouve un utilisateur a partir de son login
+		$utilisateur = $repository->getUtilisateurById($id);
+		//prepare les donnees a passer Ã  la vue
+		//dans la vue vous pourrez utiliser la variable $utilisateur
+		$data['utilisateur']=$utilisateur;
+		
 		$this->load->helper('url');
-		$this->load->view('templates/header');
+		$this->load->view('templates/header', $data);
 		$this->load->view('index');
 		$this->load->view('templates/footer');
 	}
@@ -50,13 +72,7 @@ class Welcome extends CI_Controller {
 	
 	public function compte_user()
 	{
-		//Si l'utilisateur n'est pas connecté, on le renvoit sur la page de connexion avec un message d'erreur
-		$this->load->view('templates/header');
-		$this->load->view('backoffice/login_needed_view');
-		$this->load->view('modules/login');
-		//Sinon on l'envoit sur la page de son compte
-	
-		$this->load->view('templates/footer');
+		redirect(user);
 	}
 }
 
