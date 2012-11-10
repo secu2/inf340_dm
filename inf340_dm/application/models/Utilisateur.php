@@ -98,6 +98,7 @@ class Utilisateur
      * @param unknown_type $level le niveau de l'utilisateur
      */
     public function setLevel($level) {
+    	//utilisateur normal = level 0, modérateur = level 1, administrateur = level 2
     	$this->level = $level;
     }
     
