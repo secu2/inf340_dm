@@ -39,7 +39,8 @@ class User extends CI_Controller {
 			$data['password_verify'] = $this->input->post('password_verify');
 			$em = $this->doctrine->em;
 			$repository = $em->getRepository('models\Utilisateur');
-			$repository->create($data['username'] , $data['password'] , '1');
+			//utilisateur normal = level 0, modérateur = level 1, administrateur = level 2
+			$repository->create($data['username'] , $data['password'] , '0');
 			$this->load->view('notifications/register_ok_view');
 			$this->load->view('templates/footer');
 		}
