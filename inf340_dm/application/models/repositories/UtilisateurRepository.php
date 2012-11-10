@@ -60,7 +60,15 @@ class UtilisateurRepository extends \Doctrine\ORM\EntityRepository {
 	public function getUtilisateurById($id)
 	{
 		$em = $this->getEntityManager();
+		$em = $this->getEntityManager();
 		$utilisateur = $this->findOneById($id);
+		return $utilisateur;
+	}
+	
+	public function getUtilisateurByLogin($login)
+	{
+		$em = $this->getEntityManager();
+		$utilisateur = $this->findOneByLogin($login);
 		return $utilisateur;
 	}
 	

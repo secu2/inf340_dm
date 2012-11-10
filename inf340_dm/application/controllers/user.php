@@ -4,10 +4,8 @@ class User extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
-		$this->load->library('session');
-		$this->load->library('doctrine');
-		$this->load->helper('html');
-		$this->load->helper('url');
+		$this->load->library(array('session','doctrine','form_validation'));
+		$this->load->helper(array('html','url','form'));
 			
 	}
 
@@ -25,33 +23,40 @@ class User extends CI_Controller {
 	
 	public function register()
 	{
-		$this->load->view('templates/header');
-		if($this->input->post('username') == FALSE || $this->input->post('password') == FALSE){
-			//Si je ne recoit pas les infos en POST, j'affiche le formulaire
+		$this->form_validation->set_rules('username', 'Username', 'required|callback_username_check');
+		$this->form_validation->set_rules('password', 'Password', 'required');
+		$this->form_validation->set_rules('password_verify', 'Password Confirmation', 'required|matches[password]');
+		
+		if ($this->form_validation->run() == FALSE){
+			$this->load->view('templates/header');
 			$this->load->view('modules/register');
+			$this->load->view('templates/footer');
 		}
 		else{
-			//Si je recois les données en POST je les stocke dans un tableau
+			$this->load->view('templates/header');
 			$data['username'] = $this->input->post('username');
 			$data['password'] = $this->input->post('password');
 			$data['password_verify'] = $this->input->post('password_verify');
 			$em = $this->doctrine->em;
 			$repository = $em->getRepository('models\Utilisateur');
-			// Je verifie que les deux mots de passe correspondent
-			if($data['password'] == $data['password_verify']){
-				$repository->create($data['username'] , $data['password'] , '1');
-				$this->load->view('notifications/register_ok_view');
-			}else{
-				//Si les deux mots de passe ne correspondent pas, je renvoie le formulaire en envoyant l'erreur
-				$post['error_id'] = 'Les deux mots de passe ne correspondent pas, veuillez réessayer';
-				//J'envoie aussi le username histoire de pas avoir à le taper à nouveau
-				$post['username'] = $this->input->post('username');
-				$this->load->view('modules/register', $post);
-			
-			}
+			$repository->create($data['username'] , $data['password'] , '1');
+			$this->load->view('notifications/register_ok_view');
+			$this->load->view('templates/footer');
 		}
-		$this->load->view('templates/footer');
-		
+	}
+	
+	function username_check($username)
+	{
+		$em = $this->doctrine->em;
+		$repository = $em->getRepository('models\Utilisateur');
+		$utilisateur = $repository->getUtilisateurByLogin($username);
+		if(is_null($utilisateur)){
+			return true;
+		}
+		else{
+			$this->form_validation->set_message('username_check', 'Nom d\'utilisateur indisponible');
+			return false;
+		}
 	}
 
 	public function verify()
@@ -73,7 +78,7 @@ class User extends CI_Controller {
 			redirect('/');
 		}else{
 			// Que l'authentification est réussie ou non, l'on est redirigé vers le contôleur Accueil qui via le controleur hérité vérifiera si l'authentification a réussie.
-			redirect('/login');
+			redirect('/user/');
 		}
 	}
 

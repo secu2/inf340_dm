@@ -1,20 +1,12 @@
-<?php 
-	// Condition pour récupérer une erreur et le nom d'utilisateur venant d'une tentative précédente
-	if(!isset($error_id)){
-		// Pas d'erreur, je remplis la variable pour éviter une erreur
-		$username = '';
-	}
-	else{
-		// J'ai une erreur, je l'écris au dessus du formulaire
-		echo $error_id;
-	}
+<?php
 	$this->load->helper('form');
-	echo form_open('/user/register');
-	echo 'Utilisateur: '.form_input('username', $username); //Je réutilise le nom d'utilisateur
-	echo 'Mot de passe: '.form_password('password');
-	echo 'Repeter mot de passe: '.form_password('password_verify');
-	echo form_submit('submit','S\'inscrire');
-	echo form_close();
-	
-?>
+
+	echo validation_errors();
+	echo form_open('/user/register'); ?>
+
+		Nom d'utilisateur: <input type="text" name="username" value="<?php //echo set_value(‘username’); ?>" size="20" />
+		Mot de passe: <input type="password" name="password" value="<?php //echo set_value(‘password’); ?>" size="20" />
+		Confirmer Mot de passe: <input type="password" name="password_verify" value="<?php //echo set_value(‘password_verify’); ?>" size="20" />
+		<input type="submit" value="Submit" />
+		</form>
 <hr>
