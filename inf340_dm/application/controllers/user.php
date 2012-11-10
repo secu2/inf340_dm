@@ -23,9 +23,9 @@ class User extends CI_Controller {
 	
 	public function register()
 	{
-		$this->form_validation->set_rules('username', 'Username', 'required|callback_username_check');
-		$this->form_validation->set_rules('password', 'Password', 'required');
-		$this->form_validation->set_rules('password_verify', 'Password Confirmation', 'required|matches[password]');
+		$this->form_validation->set_rules('username', '[Nom d\'utilisateur]', 'required|callback_username_check');
+		$this->form_validation->set_rules('password', '[Mot de passe]', 'required');
+		$this->form_validation->set_rules('password_verify', '[Confirmation du mot de passe]', 'required|matches[password]');
 		
 		if ($this->form_validation->run() == FALSE){
 			$this->load->view('templates/header');
@@ -39,7 +39,7 @@ class User extends CI_Controller {
 			$data['password_verify'] = $this->input->post('password_verify');
 			$em = $this->doctrine->em;
 			$repository = $em->getRepository('models\Utilisateur');
-			//utilisateur normal = level 0, modérateur = level 1, administrateur = level 2
+			//utilisateur normal = level 0, modï¿½rateur = level 1, administrateur = level 2
 			$repository->create($data['username'] , $data['password'] , '0');
 			$this->load->view('notifications/register_ok_view');
 			$this->load->view('templates/footer');
