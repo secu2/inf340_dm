@@ -11,14 +11,27 @@ class User extends CI_Controller {
 
 	public function index()
 	{
+		//recuperation de la variable de session loggedin positionnee par backoffice/session
 		$varsession = $this->session->userdata('loggedin');
-		if(isset($varsession['id'])){
-			echo 'gestion compte';
+		$id = $varsession['id'];
+		//recupere le gestionnaire d'entite
+		$em = $this->doctrine->em;
+		//recupere le depot utilisateur
+		$repository = $em->getRepository('models\Utilisateur');
+		//trouve un utilisateur a partir de son login
+		$utilisateur = $repository->getUtilisateurById($id);
+		//prepare les donnees a passer à la vue
+		//dans la vue vous pourrez utiliser la variable $utilisateur
+		$data['utilisateur']=$utilisateur;
+		
+		if(isset($id)){
+			$this->load->view('templates/header', $data);
+			$this->load->view('notifications/compte_user_view', $data);
 		}else{
 			$this->load->view('templates/header');
 			$this->load->view('modules/login');
-			$this->load->view('templates/footer');
 		}
+		$this->load->view('templates/footer');
 	}
 	
 	public function register()

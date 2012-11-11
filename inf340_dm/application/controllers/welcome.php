@@ -65,7 +65,20 @@ class Welcome extends CI_Controller {
 	
 	public function stations()
 	{
-		$this->load->view('templates/header');
+		//recuperation de la variable de session loggedin positionnee par backoffice/session
+		$varsession = $this->session->userdata('loggedin');
+		$id = $varsession['id'];
+		//recupere le gestionnaire d'entite
+		$em = $this->doctrine->em;
+		//recupere le depot utilisateur
+		$repository = $em->getRepository('models\Utilisateur');
+		//trouve un utilisateur a partir de son login
+		$utilisateur = $repository->getUtilisateurById($id);
+		//prepare les donnees a passer à la vue
+		//dans la vue vous pourrez utiliser la variable $utilisateur
+		$data['utilisateur']=$utilisateur;
+		
+		$this->load->view('templates/header', $data);
 		$this->load->view('frontoffice/stations_view');
 		$this->load->view('templates/footer');
 	}

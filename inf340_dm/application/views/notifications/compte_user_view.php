@@ -3,11 +3,11 @@
 <table>
 	<tr>
 		<th>Login</th>
-		<td><?php ?></td>
+		<td><?php echo form_input('username',$utilisateur->getLogin());?></td>
 	</tr>
 	<tr>
 		<th>Mot de passe</th>
-		<td><?php ?></td>
+		<td><?php echo form_password('password', $utilisateur->getLogin());?></td>
 	</tr>
 	<tr>
 		<th>Nombre de commentaires</th>
