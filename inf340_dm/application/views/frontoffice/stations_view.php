@@ -1,20 +1,16 @@
 <!-- Affiche la liste complète des galeries -->
 <h1>Les stations</h1>
-<!-- Cliquer sur le nom ou la photo d'une station envoie vers sa fiche -->
-<?php ?>
+<!-- Cliquer sur le nom d'une station envoie vers sa fiche -->
+<?php foreach($stations as $station) :?>
 <table>
 	<tr>
 		<!-- Nom de la station -->
-		<th><?php ?></th>
+		<th><?php echo $station->getNom();?></th>
 	</tr>
 	<tr>
 		<!-- Photo de la station -->
-		<td><?php ?></td>
-	</tr>
-	<tr>
-		<!-- Si l'utilisateur est un admin, on ajoute un bouton pour supprimer la station -->
-		<td><?php ?></td>
+		<td><?php echo 'photo'?></td>
 	</tr>
 </table>
-<?php ?>
+<?php endforeach;?>
 <hr>
