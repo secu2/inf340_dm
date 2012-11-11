@@ -22,4 +22,11 @@ class StationRepository extends \Doctrine\ORM\EntityRepository {
 	public function getUtilisateurByStation($nom){
 		return $this->getEntityManager()->getRepository('\models\Commentaire')->getUtilisateurByStation($station);
 	}
+	
+	public function getStationByNom($nom)
+	{
+		$em = $this->getEntityManager();
+		$station = $this->findOneByNom($nom);
+		return $station;
+	}
 }

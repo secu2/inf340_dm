@@ -52,6 +52,16 @@ class Station
     	return $this->nom;
     }
     
+    public function getDescription()
+    {
+    	return $this->description;
+    }
+    
+    public function getDepartement()
+    {
+    	return $this->departementNumero;
+    }
+    
     public function __setDepartement($numero)
     {
     	$this->departementNumero = $numero;

@@ -1,13 +1,17 @@
 <!-- Affiche les infos d'une station -->
-<h2>Nom de la station</h2>
+<h2><?php echo $station->getNom();?></h2>
 <table>
 	<tr>
 		<th>D&eacute;partement</th>
-		<td><?php ?></td>
+		<td><?php echo $station->getDepartement();?></td>
 	</tr>
 	<tr>
 		<th>Photo</th>
-		<td><?php ?></td>
+		<td><?php echo "photo"?></td>
+	</tr>
+	<tr>
+		<th>Description</th>
+		<td><?php echo $station->getDescription();?></td>
 	</tr>
 </table>
 <h2>Commentaires</h2>

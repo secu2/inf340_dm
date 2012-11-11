@@ -26,7 +26,7 @@ class User extends CI_Controller {
 		
 		if(isset($id)){
 			$this->load->view('templates/header', $data);
-			$this->load->view('notifications/compte_user_view', $data);
+			$this->load->view('notifications/compte_user_view');
 		}else{
 			$this->load->view('templates/header');
 			$this->load->view('modules/login');
@@ -95,6 +95,7 @@ class User extends CI_Controller {
 			redirect('/user/');
 		}
 	}
+	
 
 	function logout()
 	{

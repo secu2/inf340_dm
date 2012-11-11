@@ -5,7 +5,7 @@
 <table>
 	<tr>
 		<!-- Nom de la station -->
-		<th><?php echo $station->getNom();?></th>
+		<th><a href=<?php echo site_url(); echo "/welcome/station_info/"; echo $station->getNom();?>><?php echo $station->getNom();?></a></th>
 	</tr>
 	<tr>
 		<!-- Photo de la station -->
