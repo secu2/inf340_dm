@@ -90,22 +90,24 @@ class Welcome extends CI_Controller {
 	function station_info($nom)
 	{
 		//recuperation de la variable de session loggedin positionnee par backoffice/session
-		//$varsession = $this->session->userdata('loggedin');
-		//$id = $varsession['id'];
+		$varsession = $this->session->userdata('loggedin');
+		$id = $varsession['id'];
 		//recupere le gestionnaire d'entite
 		$em = $this->doctrine->em;
-		//recupere le depot station et commentaire
+		//recupere les depots
 		$repository = $em->getRepository('models\Station');
 		$repository2 = $em->getRepository('models\Commentaire');
-		//trouve une station a partir de son nom
+		$repository3 = $em->getRepository('models\Utilisateur');
+		
 		$station = $repository->getStationByNom($nom);
-		//trouve les commentaires р partir du nom de la station
 		$commentaires = $repository2->findByStation($station);
+		$utilisateur = $repository3->findOneById($id);
 		//prepare les donnees a passer ра la vue
 		$data['station']=$station;
 		$data2['commentaires'] = $commentaires;
+		$data3['utilisateur'] = $utilisateur;
 	
-		$this->load->view('templates/header');
+		$this->load->view('templates/header', $data3);
 		$this->load->view('frontoffice/station_info_view', $data);
 		$this->load->view('frontoffice/commentaires_view', $data2);
 		$this->load->view('templates/footer');

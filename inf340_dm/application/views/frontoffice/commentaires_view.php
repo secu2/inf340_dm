@@ -6,10 +6,11 @@
 		<td><?php echo $commentaire->getUtilisateur()->getLogin();?></td>
 		<!-- Le commentaire -->
 		<td><?php echo $commentaire->getData()?></td>
-		<!-- Si l'utilisateur est un admin ou un modo, on ajoute un bouton pour supprimer le commentaire -->
-		<?php ?>
-		<td><?php ?></td>
-		<?php ?>
+		<!-- Bouton suppression si l'utilisateur est l'auteur du commentaire ou si c'est un admin ou modo -->
+		<td><?php if(isset($utilisateur))
+			if($utilisateur->getId()==$commentaire->getUtilisateur()->getId() || $utilisateur->getLevel()>0)
+				echo "supprimer";?>
+		</td>
 	</tr>
 	<?php endforeach;?>
 </table>
