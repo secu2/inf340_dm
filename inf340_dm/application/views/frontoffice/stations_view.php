@@ -2,7 +2,7 @@
 <h1>Les stations</h1>
 <!-- Cliquer sur le nom d'une station envoie vers sa fiche -->
 <?php foreach($stations as $station) :?>
-<table>
+<table border=1>
 	<tr>
 		<!-- Nom de la station -->
 		<th><a href=<?php echo site_url(); echo "/welcome/station_info/"; echo $station->getNom();?>><?php echo $station->getNom();?></a></th>

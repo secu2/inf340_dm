@@ -96,6 +96,32 @@ class User extends CI_Controller {
 		}
 	}
 	
+	function updateOk()
+	{
+		//recuperer l'identifiant dans la variable de session loggedin
+		$varsession = $this->session->userdata('loggedin');
+		$id = $varsession['id'];
+		//recuperer le login recu en post
+		$log = $this->input->post('login');
+		//recuperer le password recu en post
+		$pass = $this->input->post('password');
+		//recuperer le level recu en post
+		$lvl = $this->input->post('level');
+		//recuperer le gestionnaire d'entites
+		$em = $this->doctrine->em;
+		//recuperer le depot utilisateur
+		$repository = $em->getRepository('models\Utilisateur');
+		//mettre a jour l'utilisateur
+		$repository->updateUtilisateur($id, $log, $pass, $lvl);
+		//récupére l'utilisateur pour la view
+		$utilisateur = $repository->getUtilisateurById($id);
+		$data['utilisateur']=$utilisateur;
+		//aficher update_success_view
+		$this->load->view('templates/header', $data);
+		$this->load->view('notifications/maj_user_ok_view');
+		$this->load->view('templates/footer');
+	}
+	
 
 	function logout()
 	{

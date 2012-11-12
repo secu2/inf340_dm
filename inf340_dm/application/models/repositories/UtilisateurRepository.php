@@ -51,6 +51,18 @@ class UtilisateurRepository extends \Doctrine\ORM\EntityRepository {
 		return $res;
 	}
 	
+	public function updateUtilisateur($id, $login, $password, $level){
+		//l'identifiant ne peut-être modifié
+		$em = $this->getEntityManager();
+		//modification de l'utilisateur
+		$repository = $em->getRepository('models\Utilisateur');
+		$utilisateur = $repository->getUtilisateurById($id);
+		$utilisateur->setLogin($login);
+		$utilisateur->setPassword($password);
+		$utilisateur->setLevel($level);
+		$em->flush();
+	}
+	
 	/**
 	 * Permet Ã  partir du 'lidentifiant de rÃ©cuperer un utilisateur.
 	 * L'opÃ©ration est posible car le l'identifiant est unique

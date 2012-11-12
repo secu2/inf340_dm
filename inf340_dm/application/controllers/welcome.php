@@ -104,6 +104,7 @@ class Welcome extends CI_Controller {
 	
 		$this->load->view('templates/header');
 		$this->load->view('frontoffice/station_info_view', $data);
+		$this->load->view('frontoffice/commentaires_view');
 		$this->load->view('templates/footer');
 	}
 	
