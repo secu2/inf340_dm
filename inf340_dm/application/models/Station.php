@@ -35,6 +35,7 @@ class Station
      *   @JoinColumn(name="departement_numero", referencedColumnName="numero", nullable=false)
      * })
      */
+    //on passe un objet département en paramètre
     private $departement;
 
     /**
