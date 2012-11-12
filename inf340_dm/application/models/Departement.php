@@ -33,6 +33,16 @@ class Departement
     	$this->numero = $numero;
     	$this->nom = $nom;
     }
+    
+    public function getNumero()
+    {
+    	return $this->numero;
+    }
+    
 
-
+    public function getNom()
+    {
+    	return $this->nom;
+    }
+    
 }

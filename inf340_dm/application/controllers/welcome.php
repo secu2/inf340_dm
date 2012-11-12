@@ -94,17 +94,20 @@ class Welcome extends CI_Controller {
 		//$id = $varsession['id'];
 		//recupere le gestionnaire d'entite
 		$em = $this->doctrine->em;
-		//recupere le depot station
+		//recupere le depot station et commentaire
 		$repository = $em->getRepository('models\Station');
-		//trouve un utilisateur a partir de son login
+		$repository2 = $em->getRepository('models\Commentaire');
+		//trouve une station a partir de son nom
 		$station = $repository->getStationByNom($nom);
-		//prepare les donnees a passer ├а la vue
-		//dans la vue vous pourrez utiliser la variable $utilisateur
+		//trouve les commentaires р partir du nom de la station
+		$commentaires = $repository2->findByStation($station);
+		//prepare les donnees a passer ра la vue
 		$data['station']=$station;
+		$data2['commentaires'] = $commentaires;
 	
 		$this->load->view('templates/header');
 		$this->load->view('frontoffice/station_info_view', $data);
-		$this->load->view('frontoffice/commentaires_view');
+		$this->load->view('frontoffice/commentaires_view', $data2);
 		$this->load->view('templates/footer');
 	}
 	

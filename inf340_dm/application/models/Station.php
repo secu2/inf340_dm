@@ -28,23 +28,23 @@ class Station
     private $description;
 
     /**
-     * @var Departement
+     * @var Departement 
      *
      * @ManyToOne(targetEntity="Departement")
      * @JoinColumns({
      *   @JoinColumn(name="departement_numero", referencedColumnName="numero", nullable=false)
      * })
      */
-    private $departementNumero;
+    private $departement;
 
     /**
      * Constructor
      */
-    public function __construct($nom, $description, $numero)
+    public function __construct($nom, $description, $departement)
     {
         $this->nom = $nom;
     	$this->description = $description;
-    	$this->departementNumero = $numero; 
+    	$this->departement = $departement; 
     }
     
     public function getNom()
@@ -59,12 +59,12 @@ class Station
     
     public function getDepartement()
     {
-    	return $this->departementNumero;
+    	return $this->departement;
     }
     
-    public function __setDepartement($numero)
+    public function __setDepartement($departement)
     {
-    	$this->departementNumero = $numero;
+    	$this->departement = $departement;
     }
     
 }

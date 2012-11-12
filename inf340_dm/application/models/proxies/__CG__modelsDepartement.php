@@ -42,6 +42,21 @@ class Departement extends \models\Departement implements \Doctrine\ORM\Proxy\Pro
     }
 
     
+    public function getNumero()
+    {
+        if ($this->__isInitialized__ === false) {
+            return $this->_identifier["numero"];
+        }
+        $this->__load();
+        return parent::getNumero();
+    }
+
+    public function getNom()
+    {
+        $this->__load();
+        return parent::getNom();
+    }
+
 
     public function __sleep()
     {

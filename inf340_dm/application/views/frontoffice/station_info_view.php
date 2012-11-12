@@ -3,7 +3,7 @@
 <table border=1>
 	<tr>
 		<th>D&eacute;partement</th>
-		<td><?php echo $station->getDepartement();?></td>
+		<td><?php echo $station->getDepartement()->getNumero();?></td>
 	</tr>
 	<tr>
 		<th>Photo</th>

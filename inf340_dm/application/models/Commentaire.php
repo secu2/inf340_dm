@@ -21,7 +21,7 @@ class Commentaire
      *   @JoinColumn(name="Utilisateur_id", referencedColumnName="id", onDelete="Cascade")
      * })
      */
-    private $id;
+    private $utilisateur;
 
     /**
      * 
@@ -31,7 +31,7 @@ class Commentaire
      *   @JoinColumn(name="Station_nom", referencedColumnName="nom", onDelete="Cascade")
      * })
      */
-    private $nom;
+    private $station;
     
     /**
      * @var string $parameter
@@ -43,9 +43,9 @@ class Commentaire
     
     
     
-    public function __construct($id, $nom, $data){
-    	$this->id = $id;
-    	$this->nom = $nom;	
+    public function __construct($utilisateur, $station, $data){
+    	$this->utilisateur = $utilisateur;
+    	$this->station = $station;	
     	$this->data = $data;
     }
     
@@ -57,10 +57,10 @@ class Commentaire
     	$this->data = $data;
     }
     
-    public function getId(){
-    	return $this->id;
+    public function getUtilisateur(){
+    	return $this->utilisateur;
     }
-    public function getNom(){
-    	return $this->nom;
+    public function getStation(){
+    	return $this->station;
     }
 }
