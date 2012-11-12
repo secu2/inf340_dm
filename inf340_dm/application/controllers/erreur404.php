@@ -13,4 +13,5 @@ class erreur404 extends CI_Controller
 		$this->load->view('erreur404',$data);
 	}
 }
+// test
 ?>
