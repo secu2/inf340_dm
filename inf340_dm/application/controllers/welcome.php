@@ -65,8 +65,45 @@ class Welcome extends CI_Controller {
 	
 	public function stations()
 	{
+		//recuperation de la variable de session loggedin positionnee par backoffice/session
+		$varsession = $this->session->userdata('loggedin');
+		$id = $varsession['id'];
+		//recupere le gestionnaire d'entite
+		$em = $this->doctrine->em;
+		//recupere le depot utilisateur et station
+		$repository = $em->getRepository('models\Utilisateur');
+		$repository2 = $em->getRepository('models\Station');
+		//trouve un utilisateur a partir de son login
+		//trouve toutes les stations
+		$utilisateur = $repository->getUtilisateurById($id);
+		$stations = $repository2-> findAll();
+		//prepare les donnees a passer à la vue
+		//dans la vue vous pourrez utiliser la variable $utilisateur et stations
+		$data['utilisateur']=$utilisateur;
+		$data2['stations'] = $stations;
+		
+		$this->load->view('templates/header', $data);
+		$this->load->view('frontoffice/stations_view', $data2);
+		$this->load->view('templates/footer');
+	}
+	
+	function station_info($nom)
+	{
+		//recuperation de la variable de session loggedin positionnee par backoffice/session
+		//$varsession = $this->session->userdata('loggedin');
+		//$id = $varsession['id'];
+		//recupere le gestionnaire d'entite
+		$em = $this->doctrine->em;
+		//recupere le depot station
+		$repository = $em->getRepository('models\Station');
+		//trouve un utilisateur a partir de son login
+		$station = $repository->getStationByNom($nom);
+		//prepare les donnees a passer à la vue
+		//dans la vue vous pourrez utiliser la variable $utilisateur
+		$data['station']=$station;
+	
 		$this->load->view('templates/header');
-		$this->load->view('frontoffice/stations_view');
+		$this->load->view('frontoffice/station_info_view', $data);
 		$this->load->view('templates/footer');
 	}
 	

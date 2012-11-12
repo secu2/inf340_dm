@@ -36,18 +36,35 @@ class Station
      * })
      */
     private $departementNumero;
-    
-    /**
-     * @OneToMany(targetEntity="Image", mappedBy="station")
-     */
-    private $images;
 
     /**
      * Constructor
      */
-    public function __construct()
+    public function __construct($nom, $description, $numero)
     {
-        
+        $this->nom = $nom;
+    	$this->description = $description;
+    	$this->departementNumero = $numero; 
+    }
+    
+    public function getNom()
+    {
+    	return $this->nom;
+    }
+    
+    public function getDescription()
+    {
+    	return $this->description;
+    }
+    
+    public function getDepartement()
+    {
+    	return $this->departementNumero;
+    }
+    
+    public function __setDepartement($numero)
+    {
+    	$this->departementNumero = $numero;
     }
     
 }

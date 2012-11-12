@@ -25,8 +25,7 @@
 			<li><a href=<?php echo site_url();?>>Accueil</a></li>
 			<li><a href=<?php echo site_url('welcome/stations/');?>>Les stations</a>
 			</li>
-			<li><a href=<?php echo site_url('user/');?>>Votre
-					compte</a></li>
+			<li><a href=<?php echo site_url('user/');?>>Votre compte</a></li>
 		</ul>
 	</div>
 
@@ -34,9 +33,9 @@
 
 
 		<ul id="connexion">
-			<!-- Si l'utilisateur est connecte, afficher "Bonjour [pseudo]" et un lien vers la deconnexion -->
+			<!-- Si l'utilisateur est connecte, afficher "Bonjour pseudo" et un lien vers la deconnexion -->
 			<?php if(isset($utilisateur)){ ?>
-			<li>Bonjour [<?php echo $utilisateur->getLogin(); ?>]
+			<li>Bonjour <?php echo $utilisateur->getLogin(); ?>
 			</li>
 			<li><a href="<?php echo site_url('user/logout');?>">D&eacute;connexion</a>
 			</li>

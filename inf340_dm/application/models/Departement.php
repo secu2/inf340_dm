@@ -28,10 +28,11 @@ class Departement
      */
     private $nom;
     
-    /**
-     * @OneToMany(targetEntity="Station", mappedBy="departement")
-     */
-    private $stations;
+    public function __construct($numero, $nom)
+    {
+    	$this->numero = $numero;
+    	$this->nom = $nom;
+    }
 
 
 }
