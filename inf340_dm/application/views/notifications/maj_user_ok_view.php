@@ -1,2 +1,3 @@
-<h1>Mise &agrave; jour de votre compte r&eacute;ussie</h1>
+<h1>Mise à jour effectuée</h1>
+<a href=<?php echo site_url('user/');?>>Retour à votre compte</a>
 <hr>

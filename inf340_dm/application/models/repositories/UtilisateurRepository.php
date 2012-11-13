@@ -63,6 +63,32 @@ class UtilisateurRepository extends \Doctrine\ORM\EntityRepository {
 		$em->flush();
 	}
 	
+	public function changeLevel($id, $level)
+	{
+		//l'identifiant ne peut-Ítre modifiÈ
+		$em = $this->getEntityManager();
+		//modification de l'utilisateur
+		$repository = $em->getRepository('models\Utilisateur');
+		$utilisateur = $repository->getUtilisateurById($id);
+		$utilisateur->setLevel($level);
+		$em->flush();
+	}
+	
+	public function delete($id)
+	{
+		$em = $this->getEntityManager();
+	
+		try {
+			//suppression d'un utilisateur
+			$repository = $em->getRepository('models\Utilisateur');
+			$utilisateur = $repository->getUtilisateurById($id);
+			$em->remove($utilisateur);
+			$em->flush();
+		} catch (\Exception $e) {
+	
+		};
+	}
+	
 	/**
 	 * Permet √† partir du 'lidentifiant de r√©cuperer un utilisateur.
 	 * L'op√©ration est posible car le l'identifiant est unique

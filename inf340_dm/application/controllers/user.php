@@ -126,6 +126,33 @@ class User extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 	
+	function change_level($id, $level)
+	{
+		$em = $this->doctrine->em;
+		$repository = $em->getRepository('models\Utilisateur');
+		$repository->changeLevel($id, $level);
+		$varsession = $this->session->userdata('loggedin');
+		$id2 = $varsession['id'];
+		$utilisateur = $repository->getUtilisateurById($id2);
+		$data['utilisateur']=$utilisateur;
+		$this->load->view('templates/header', $data);
+		$this->load->view('notifications/maj_user_ok_view');
+		$this->load->view('templates/footer');
+	}
+	
+	function delete($id)
+	{
+		$em = $this->doctrine->em;
+		$repository = $em->getRepository('models\Utilisateur');
+		$repository->delete($id);
+		$varsession = $this->session->userdata('loggedin');
+		$id2 = $varsession['id'];
+		$utilisateur = $repository->getUtilisateurById($id2);
+		$data['utilisateur']=$utilisateur;
+		$this->load->view('templates/header', $data);
+		$this->load->view('notifications/maj_user_ok_view');
+		$this->load->view('templates/footer');
+	}
 
 	function logout()
 	{
