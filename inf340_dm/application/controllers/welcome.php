@@ -102,7 +102,7 @@ class Welcome extends CI_Controller {
 		$station = $repository->getStationByNom($nom);
 		$commentaires = $repository2->findByStation($station);
 		$utilisateur = $repository3->findOneById($id);
-		//prepare les donnees a passer à  la vue
+		//prepare les donnees a passer ï¿½ la vue
 		$data['station']=$station;
 		$data2['commentaires'] = $commentaires;
 		$data3['utilisateur'] = $utilisateur;

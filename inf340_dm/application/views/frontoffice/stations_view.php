@@ -1,4 +1,4 @@
-<!-- Affiche la liste complète des galeries -->
+<!-- Affiche la liste complï¿½te des galeries -->
 <h1>Les stations</h1>
 <!-- Cliquer sur le nom d'une station envoie vers sa fiche -->
 <?php foreach($stations as $station) :?>
@@ -9,7 +9,7 @@
 	</tr>
 	<tr>
 		<!-- Photo de la station -->
-		<td><?php echo 'photo'?></td>
+		<td><?php echo 'photo'; ?></td>
 	</tr>
 </table>
 <?php endforeach;?>

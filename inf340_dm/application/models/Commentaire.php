@@ -21,7 +21,7 @@ class Commentaire
      *   @JoinColumn(name="Utilisateur_id", referencedColumnName="id", onDelete="Cascade")
      * })
      */
-	//on passe un objet utilisateur en paramètre
+	//on passe un objet utilisateur en paramï¿½tre
     private $utilisateur;
 
     /**
@@ -32,7 +32,7 @@ class Commentaire
      *   @JoinColumn(name="Station_nom", referencedColumnName="nom", onDelete="Cascade")
      * })
      */
-    //on passe un objet station en paramètre
+    //on passe un objet station en paramï¿½tre
     private $station;
     
     /**
@@ -52,7 +52,8 @@ class Commentaire
     }
     
     public function getData(){
-    	return $this->data;
+    	$data = explode("|", $this->data);
+    	return $data;
     }
     
     public function setData($data){
