@@ -12,4 +12,3 @@
 	Inscrivez-vous et retrouvez la liste des stations de ski de votre r&eacute;gion, comment&eacute;es 
 	par nos membres.
 </p>
-<hr>

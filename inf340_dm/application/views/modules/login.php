@@ -8,4 +8,3 @@
 	echo form_submit('submit','Connexion');
 	echo form_close();
 ?>
-<hr>

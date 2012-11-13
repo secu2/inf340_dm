@@ -1,6 +1,6 @@
 <!-- Vue accessible seulement par l'admin -->
 <!-- Il peut, à partir de cette vue, ajouter une station -->
-<h1>Ajouter une station</h1>
+<h2>Ajouter une station</h2>
 <?php
 	$this->load->helper('form');
 

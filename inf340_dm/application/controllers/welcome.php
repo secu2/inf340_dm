@@ -86,7 +86,7 @@ class Welcome extends CI_Controller {
 		
 		$this->load->view('templates/header', $data);
 		$this->load->view('frontoffice/stations_view', $data2);
-		if($utilisateur->getLevel()==2)
+		if(isset($utilisateur) && $utilisateur->getLevel()==2)
 			$this->load->view('modules/add_station_view', $data3);
 		$this->load->view('templates/footer');
 	}

@@ -11,4 +11,3 @@
 		Confirmer mot de passe: <input type="password" name="password_verify" value="" size="20" /> <br />
 		<input type="submit" value="Submit" />
 		</form>
-<hr>

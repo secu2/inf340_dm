@@ -5,7 +5,7 @@
 namespace models;
 
 /**
- * Utilisateur
+ * Commentaire
  *
  *@Table(name="Commentaire")
  *@Entity (repositoryClass="\models\repositories\CommentaireRepository")
