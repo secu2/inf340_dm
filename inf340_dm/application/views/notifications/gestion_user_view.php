@@ -17,8 +17,8 @@
 					<a href=<?php echo site_url(''); echo "user/change_level/"; echo $utilisateur->getId(); echo "/0";?>>Rétrograder</a>
 		</td>
 		<!-- Bouton "supprimer utilisateur" sauf si c'est un admin -->
-		<td><?php }}if($utilisateur->getLevel()!=2){?>
-				<a href=<?php echo site_url(''); echo "user/delete/"; echo $utilisateur->getId();?>>Supprimer</a></td>
+		<?php }}if($utilisateur->getLevel()!=2){?>
+				<td><a href=<?php echo site_url(''); echo "user/delete/"; echo $utilisateur->getId()+"";?>>Supprimer</a></td>
 	</tr>
 	<?php }endforeach;?>
 </table>

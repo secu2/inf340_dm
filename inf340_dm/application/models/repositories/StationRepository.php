@@ -8,8 +8,8 @@ namespace models\repositories;
  */
 class StationRepository extends \Doctrine\ORM\EntityRepository {
 
-	public function create(){
-		$station = new \models\Station();
+	public function create($nom, $description, $departement){
+		$station = new \models\Station($nom, $description, $departement);
 		$this->getEntityManager()->persist($station);
 		$this->getEntityManager()->flush();
 		return $station;

@@ -14,14 +14,17 @@
 		<!-- Bouton suppression si l'utilisateur est l'auteur du commentaire ou si c'est un admin ou modo -->
 		<?php if(isset($utilisateur))
 			if($utilisateur->getId()==$commentaire->getUtilisateur()->getId() || $utilisateur->getLevel()>0)
+				echo "<td>supprimer</td>";
+			elseif ($utilisateur->getLevel()==1 && $commentaire->getUtilisateur()->getLevel()<2)
+				echo "<td>supprimer</td>";
+			elseif ($utilsiateur->getLevel()==2)
 				echo "<td>supprimer</td>";?>
-		
 	</tr>
 </table>
 	<?php endforeach;?>
 	<form action="<?php echo site_url('user/');?>">
 		<?php if(isset($utilisateur)){ ?>
-			<input type="text" value="Participez a la discussion" class="commentaire"></input>
+			<input type="text" value="Participez a la discussion" class="commentaire" size="100"></input>
 			<input type="submit" value="Commenter">
 		<?php }else{ ?>
 			Veuillez vous <a href=<?php echo site_url('user/');?>>connecter</a> ou vous <a href=<?php echo site_url('user/register');?>>inscrire</a> pour laisser un commentaire.
