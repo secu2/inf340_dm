@@ -2,7 +2,7 @@
 <table border=1>
 	<?php foreach($commentaires as $commentaire) :?>
 	<tr>
-		<!-- Pseudo de la personne qui a post� un commentaire -->
+		<!-- Pseudo de la personne qui a poste un commentaire -->
 		<td><em><?php echo $commentaire->getUtilisateur()->getLogin();?>:</em></td>
 		<?php $commentaire_data = $commentaire->getData(); ?>
 		<!-- Le commentaire -->
@@ -17,6 +17,7 @@
 				echo "<td>supprimer</td>";?>
 		
 	</tr>
+</table>
 	<?php endforeach;?>
 	<form action="<?php echo site_url('user/');?>">
 		<?php if(isset($utilisateur)){ ?>
@@ -26,4 +27,3 @@
 			Veuillez vous <a href=<?php echo site_url('user/');?>>connecter</a> ou vous <a href=<?php echo site_url('user/register');?>>inscrire</a> pour laisser un commentaire.
 		<?php } ?>
 	</form>
-</table>

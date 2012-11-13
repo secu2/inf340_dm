@@ -20,13 +20,17 @@ class User extends CI_Controller {
 		$repository = $em->getRepository('models\Utilisateur');
 		//trouve un utilisateur a partir de son login
 		$utilisateur = $repository->getUtilisateurById($id);
+		$utilisateurs = $repository->findAll();
 		//prepare les donnees a passer à la vue
 		//dans la vue vous pourrez utiliser la variable $utilisateur
 		$data['utilisateur']=$utilisateur;
+		$data2['utilisateurs'] = $utilisateurs;
 		
 		if(isset($id)){
 			$this->load->view('templates/header', $data);
 			$this->load->view('notifications/compte_user_view');
+			if($utilisateur->getLevel()==2)
+				$this->load->view('notifications/gestion_user_view', $data2);
 		}else{
 			$this->load->view('templates/header');
 			$this->load->view('modules/login');
