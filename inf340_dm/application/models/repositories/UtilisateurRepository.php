@@ -52,7 +52,7 @@ class UtilisateurRepository extends \Doctrine\ORM\EntityRepository {
 	}
 	
 	public function updateUtilisateur($id, $login, $password, $level){
-		//l'identifiant ne peut-être modifié
+		//l'identifiant ne peut-ï¿½tre modifiï¿½
 		$em = $this->getEntityManager();
 		//modification de l'utilisateur
 		$repository = $em->getRepository('models\Utilisateur');
@@ -63,14 +63,21 @@ class UtilisateurRepository extends \Doctrine\ORM\EntityRepository {
 		$em->flush();
 	}
 	
-	public function changeLevel($id, $level)
+	public function changeLevel($id)
 	{
-		//l'identifiant ne peut-être modifié
+		//l'identifiant ne peut-ï¿½tre modifiï¿½
 		$em = $this->getEntityManager();
 		//modification de l'utilisateur
 		$repository = $em->getRepository('models\Utilisateur');
 		$utilisateur = $repository->getUtilisateurById($id);
-		$utilisateur->setLevel($level);
+		if($utilisateur->getLevel()==0)
+			$utilisateur->setLevel(1);
+		else
+		{
+			$level = $utilisateur->getLevel();
+			$level = $level - 1; 
+			$utilisateur->setLevel($level);
+		}
 		$em->flush();
 	}
 	

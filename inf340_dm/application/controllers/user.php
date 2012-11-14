@@ -20,11 +20,11 @@ class User extends CI_Controller {
 		$repository = $em->getRepository('models\Utilisateur');
 		//trouve un utilisateur a partir de son login
 		$utilisateur = $repository->getUtilisateurById($id);
-		$utilisateurs = $repository->findAll();
+		$users = $repository->findAll();
 		//prepare les donnees a passer Ã  la vue
 		//dans la vue vous pourrez utiliser la variable $utilisateur
 		$data['utilisateur']=$utilisateur;
-		$data2['utilisateurs'] = $utilisateurs;
+		$data2['users'] = $users;
 		
 		if(isset($id)){
 			$this->load->view('templates/header', $data);
@@ -117,7 +117,7 @@ class User extends CI_Controller {
 		$repository = $em->getRepository('models\Utilisateur');
 		//mettre a jour l'utilisateur
 		$repository->updateUtilisateur($id, $log, $pass, $lvl);
-		//récupére l'utilisateur pour la view
+		//rï¿½cupï¿½re l'utilisateur pour la view
 		$utilisateur = $repository->getUtilisateurById($id);
 		$data['utilisateur']=$utilisateur;
 		//aficher update_success_view
@@ -126,11 +126,11 @@ class User extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 	
-	function change_level($id, $level)
+	function change_level($id)
 	{
 		$em = $this->doctrine->em;
 		$repository = $em->getRepository('models\Utilisateur');
-		$repository->changeLevel($id, $level);
+		$repository->changeLevel($id);
 		
 		$varsession = $this->session->userdata('loggedin');
 		$id2 = $varsession['id'];
