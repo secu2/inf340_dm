@@ -5,7 +5,7 @@
 	$this->load->helper('form');
 
 	echo validation_errors();
-	echo form_open('/welcome/add_station'); ?>
+	echo form_open('/station/add_station'); ?>
 <form>
 	Nom de la station : <input type="text" name="nom_station" value="<?php echo set_value('nom'); ?>" size="100" /> <br />
 	Photo : <input type="file" name="userfile" size="20" value="<?php echo set_value('userfile'); ?>" /> Description photo:<input type="text" name="description_image" value="<?php echo set_value('description_image'); ?>" size="10" /><br />
