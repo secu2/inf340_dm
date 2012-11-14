@@ -122,7 +122,7 @@ class User extends CI_Controller {
 		$data['utilisateur']=$utilisateur;
 		//aficher update_success_view
 		$this->load->view('templates/header', $data);
-		$this->load->view('notifications/maj_user_ok_view');
+		$this->load->view('notifications/maj_ok_view');
 		$this->load->view('templates/footer');
 	}
 	
@@ -138,7 +138,7 @@ class User extends CI_Controller {
 		$data['utilisateur']=$utilisateur;
 		
 		$this->load->view('templates/header', $data);
-		$this->load->view('notifications/maj_user_ok_view');
+		$this->load->view('notifications/maj_ok_view');
 		$this->load->view('templates/footer');
 	}
 	
@@ -154,7 +154,7 @@ class User extends CI_Controller {
 		$data['utilisateur']=$utilisateur;
 		
 		$this->load->view('templates/header', $data);
-		$this->load->view('notifications/maj_user_ok_view');
+		$this->load->view('notifications/maj_ok_view');
 		$this->load->view('templates/footer');
 	}
 

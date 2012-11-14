@@ -1,0 +1,1 @@
+<h1>Mise &agrave; jour effectu&eacute;e</h1>

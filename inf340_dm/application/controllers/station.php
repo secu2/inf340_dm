@@ -158,6 +158,23 @@ class Station extends CI_Controller {
 		}
 	}
 	
+	function delete($nom)
+	{
+		$em = $this->doctrine->em;
+		$repository = $em->getRepository('models\Station');
+		$repository->delete($nom);
+	
+		$varsession = $this->session->userdata('loggedin');
+		$id2 = $varsession['id'];
+		$repository2 = $em->getRepository('models\Utilisateur');
+		$utilisateur = $repository2->findOneById($id2);
+		$data['utilisateur']=$utilisateur;
+	
+		$this->load->view('templates/header', $data);
+		$this->load->view('notifications/maj_ok_view');
+		$this->load->view('templates/footer');
+	}
+	
 }
 
 /* End of file station.php */
