@@ -43,21 +43,37 @@ class Commentaire
      */
     private $data;
     
+    /**
+     * @var integer $parameter
+     *
+     *@Column(name="note", type="integer", length=2)
+     *
+     */
+    private $note;
     
     
-    public function __construct($utilisateur, $station, $data){
+    
+    public function __construct($utilisateur, $station, $data, $note){
     	$this->utilisateur = $utilisateur;
     	$this->station = $station;	
     	$this->data = $data;
+    	$this->note = $note;
     }
     
     public function getData(){
-    	$data = explode("|", $this->data);
-    	return $data;
+    	return $this->data;
     }
     
     public function setData($data){
     	$this->data = $data;
+    }
+    
+    public function getNote(){
+    	return $this->note;
+    }
+    
+    public function setNote($note){
+    	$this->note = $note;
     }
     
     public function getUtilisateur(){

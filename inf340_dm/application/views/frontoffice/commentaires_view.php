@@ -4,24 +4,22 @@
 	<tr>
 		<!-- Pseudo de la personne qui a poste un commentaire -->
 		<td><em><?php echo $commentaire->getUtilisateur()->getLogin();?>:</em></td>
-		<?php $commentaire_data = $commentaire->getData(); ?>
-		<!-- Le commentaire -->
-		<td><?php echo $commentaire_data[1]; ?></td>
 		<!-- La date -->
-		<td><?php echo $commentaire_data[0]; ?></td>
+		<td><?php echo "date"; ?></td>
+		<!-- Le commentaire -->
+		<td><?php echo $commentaire->getData(); ?></td>
 		<!-- La note -->
-		<td><?php echo $commentaire_data[2].'/10'; ?></td>
-		<!-- Bouton suppression si l'utilisateur est l'auteur du commentaire ou si c'est un admin ou modo -->
+		<td><?php echo $commentaire->getNote(); echo " / 10"; ?></td>
+		<!-- Bouton suppression si  : -->
+		<!-- - l'utilisateur est l'auteur du commentaire -->
+		<!-- - l'utilisateur est un modo (mais il ne peut pas supprimer les commentaires de l'admin -->
+		<!-- - l'utilisateur est admin -->
 		<?php if(isset($utilisateur))
-			if($utilisateur->getId()==$commentaire->getUtilisateur()->getId() || $utilisateur->getLevel()>0)
-				echo "<td>supprimer</td>";
-			elseif ($utilisateur->getLevel()==1 && $commentaire->getUtilisateur()->getLevel()<2)
-				echo "<td>supprimer</td>";
-			elseif ($utilsiateur->getLevel()==2)
+			if($utilisateur->getId()==$commentaire->getUtilisateur()->getId() || $utilisateur->getLevel()>0 && $commentaire->getUtilisateur()->getLevel()<2)
 				echo "<td>supprimer</td>";?>
 	</tr>
-</table>
 	<?php endforeach;?>
+</table>
 	<form action="<?php echo site_url('user/');?>">
 		<?php if(isset($utilisateur)){ ?>
 			<input type="text" value="Participez a la discussion" class="commentaire" size="100"></input>
