@@ -162,6 +162,7 @@ footer {
 #tableau {
 	background-color: rgba(255,255,255, 0.4);
 	position: relative;
+	display: table;
 	display: table-cell;
 }
 
@@ -172,5 +173,11 @@ footer {
 
 #tableau a:hover {
 	color: rgb(11,95,165);
+}
+
+#membres a {
+	color: black;
+	text-decoration: none;
+	font-style: italic;
 }
 

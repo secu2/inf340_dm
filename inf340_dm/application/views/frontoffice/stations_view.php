@@ -13,9 +13,10 @@
 	</tr>
 	<!-- Si l'utilisateur est un admin, on ajoute le bouton pour supprimer la station -->
 	<tr>
-		<?php if(isset($utilisateur))
+		<td> <?php if(isset($utilisateur))
 				if($utilisateur->getLevel()==2)
 					echo 'supprimer';?>
+		</td>
 	</tr>
 </table>
 <?php endforeach;?>
