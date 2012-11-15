@@ -10,7 +10,7 @@
 		<td><?php echo $station->getDescription();?></td>
 	</tr>
 	<tr>
-		<th>D&eacute;partement</th>
+		<th>Département</th>
 		<td><?php echo $station->getDepartement()->getNumero();?></td>
 	</tr>
 </table>

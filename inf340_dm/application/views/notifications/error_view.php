@@ -1,5 +1,5 @@
 <h2>Erreur : <?php echo $id_error; ?></h2>
-<p>Une erreur est survenue, veuillez r&eacute;essayer.</p>
+<p>Une erreur est survenue, veuillez réessayer.</p>
 <p>
 <?php if(isset($url_retour)){?>
 	<a href="<?php base_url($url_retour); ?>">Retour</a></p>

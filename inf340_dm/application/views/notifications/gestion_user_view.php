@@ -12,9 +12,9 @@
 		<td>
 			<?php if ($user->getId()!=$utilisateur->getId())
 				{if($user->getLevel()==0){?>
-					<a href=<?php echo site_url(''); echo "user/change_level/"; echo $user->getId();?>>Nommer mod&eacute;rateur</a>
+					<a href=<?php echo site_url(''); echo "user/change_level/"; echo $user->getId();?>>Nommer modérateur</a>
 				<?php }else{?>
-					<a href=<?php echo site_url(''); echo "user/change_level/"; echo $user->getId();?>>R&eacute;trograder</a>
+					<a href=<?php echo site_url(''); echo "user/change_level/"; echo $user->getId();?>>Rétrograder</a>
 		</td>
 		<!-- Bouton "supprimer utilisateur" mais un admin ne peut pas se supprimer lui-même -->
 		<?php }}if($user->getId()!=$utilisateur->getId()){?>

@@ -1,1 +1,1 @@
-<h1>Inscription r&eacute;ussie, vous pouvez d&eacute;sormais vous connecter</h1>
+<h1>Inscription réussie, vous pouvez désormais vous connecter</h1>
