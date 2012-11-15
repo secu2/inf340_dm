@@ -66,7 +66,7 @@ class Station extends CI_Controller {
 	{
 		$this->form_validation->set_rules('nom_station', '[Nom de la station]', 'required|callback_nom_station_check');
 		$this->form_validation->set_rules('description_station', '[Description]', 'required');
-		//$this->form_validation->set_rules('userfile', '[Photo]', 'required');
+		$this->form_validation->set_rules('userfile', '[Photo]', 'required');
 		$this->form_validation->set_rules('description_image', '[Description Image]', 'required');
 		$this->form_validation->set_rules('departement_station', '[Département]', 'required');
 	

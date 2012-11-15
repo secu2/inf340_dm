@@ -4,8 +4,6 @@
 	<tr>
 		<!-- Pseudo de la personne qui a poste un commentaire -->
 		<td><em><?php echo $commentaire->getUtilisateur()->getLogin();?>:</em></td>
-		<!-- La date -->
-		<td><?php echo "date"; ?></td>
 		<!-- Le commentaire -->
 		<td><?php echo $commentaire->getData(); ?></td>
 		<!-- La note -->
@@ -15,8 +13,8 @@
 		<!-- - l'utilisateur est un modo (mais il ne peut pas supprimer les commentaires de l'admin -->
 		<!-- - l'utilisateur est admin -->
 		<?php if(isset($utilisateur))
-			if($utilisateur->getId()==$commentaire->getUtilisateur()->getId() || $utilisateur->getLevel()>0 && $commentaire->getUtilisateur()->getLevel()<2)
-				echo "<td>supprimer</td>";?>
+			if($utilisateur->getId()==$commentaire->getUtilisateur()->getId() || $utilisateur->getLevel()>0 && $commentaire->getUtilisateur()->getLevel()<2){?>
+				<td><a href=<?php echo site_url(''); echo "user/delete_commentaire/"; echo $commentaire->getUtilisateur()->getId(); echo "/"; echo $station->getNom();?>>Supprimer</a></td><?php }?>
 	</tr>
 	<?php endforeach;?>
 </table>

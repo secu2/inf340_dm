@@ -21,7 +21,7 @@ class Commentaire
      *   @JoinColumn(name="Utilisateur_id", referencedColumnName="id", onDelete="Cascade")
      * })
      */
-	//on passe un objet utilisateur en param�tre
+	//on passe un objet utilisateur en paramètre
     private $utilisateur;
 
     /**
@@ -32,13 +32,13 @@ class Commentaire
      *   @JoinColumn(name="Station_nom", referencedColumnName="nom", onDelete="Cascade")
      * })
      */
-    //on passe un objet station en param�tre
+    //on passe un objet station en paramètre
     private $station;
     
     /**
      * @var string $parameter
      *
-     *@Column(name="data", type="string", length=100)
+     *@Column(name="data", type="string", length=150)
      *
      */
     private $data;

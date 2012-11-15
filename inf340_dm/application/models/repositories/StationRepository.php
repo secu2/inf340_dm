@@ -2,7 +2,7 @@
 namespace models\repositories;
 
 /**
- * Le dépôt utilisateur
+ * Le dépôt station
  * @author jub
  *
  */
@@ -35,7 +35,7 @@ class StationRepository extends \Doctrine\ORM\EntityRepository {
 		$em = $this->getEntityManager();
 	
 		try {
-			//suppression d'un utilisateur
+			//suppression d'une station
 			$repository = $em->getRepository('models\Station');
 			$station = $repository->getStationByNom($nom);
 			$em->remove($station);

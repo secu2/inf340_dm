@@ -12,7 +12,7 @@
 	<p>Description : <input type="text" name="description_station" value="<?php echo set_value('description_station'); ?>" size="100" /></p> <br />
 	<p>Département :
 		
-		<select name="departement_station" value="<?php echo set_value('description_station'); ?>">
+		<select name="departement_station">
 			<?php foreach ($departements as $departement) :?>
 			<option>
 				<?php echo $departement->getNumero();?>

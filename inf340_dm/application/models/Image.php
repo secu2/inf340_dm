@@ -35,11 +35,12 @@ class Image
      *   @JoinColumn(name="station_nom", referencedColumnName="nom", onDelete = "Cascade")
      * })
      */
-    private $station_nom;
+    // on passe un objet de type Station en paramètre
+    private $station;
 
-    public function __construct($description, $station_nom) {
+    public function __construct($description, $station) {
     	$this->description = $description;
-    	$this->station_nom = $station_nom;
+    	$this->station = $station;
     }
     
     /**

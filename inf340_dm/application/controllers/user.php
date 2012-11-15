@@ -148,15 +148,41 @@ class User extends CI_Controller {
 		}
 		else{
 			$this->load->view('templates/header', $data['utilisateur']);
-			$data['nom'] = $this->input->post('nom');
+			$nom = $this->input->post('nom');
+			$rep2 = $em->getRepository('models\Station');
+			
+			$data['station'] = $rep2->getStationByNom($nom);
 			$data['data'] = $this->input->post('data');
 			$data['note'] = $this->input->post('note');
 			
 			$repository = $em->getRepository('models\Commentaire');
-			$repository->create($id, $data['nom'], $data['data'] , $data['note']);
+			$repository->create($id, $data['station'], $data['data'] , $data['note']);
 			$this->load->view('notifications/add_commentaire_ok_view');
 			$this->load->view('templates/footer');
 		}
+	}
+	
+	function delete_commentaire($id, $nom)
+	{
+		$em = $this->doctrine->em;
+		
+		$rep = $em->getRepository('models\Utilisateur');
+		$auteur = $rep->findOneById($id);
+
+		$rep2 = $em->getRepository('models\Station');
+		$station = $rep2->findOneByNom($nom);
+		
+		$repository = $em->getRepository('models\Commentaire');
+		$repository->delete($auteur, $station);
+	
+		$varsession = $this->session->userdata('loggedin');
+		$id2 = $varsession['id'];
+		$utilisateur = $rep->findOneById($id2);
+		$data['utilisateur']=$utilisateur;
+	
+		$this->load->view('templates/header', $data);
+		$this->load->view('notifications/maj_ok_view');
+		$this->load->view('templates/footer');
 	}
 	
 	function change_level($id)
