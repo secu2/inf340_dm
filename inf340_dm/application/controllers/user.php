@@ -140,14 +140,14 @@ class User extends CI_Controller {
 		$this->form_validation->set_rules('note', '[Note]', 'required');
 		
 		if ($this->form_validation->run() == FALSE){
-			$id_error = 'ajout d\' un commentaire';
+			$id_error = 'ajout d\'un commentaire';
 			$data_error['id_error'] = $id_error;
-			$this->load->view('templates/header', $data['utilisateur']);
+			$this->load->view('templates/header', $data);
 			$this->load->view('notifications/error_view', $data_error);
 			$this->load->view('templates/footer');
 		}
 		else{
-			$this->load->view('templates/header', $data['utilisateur']);
+			$this->load->view('templates/header', $data);
 			$nom = $this->input->post('nom');
 			$rep2 = $em->getRepository('models\Station');
 			

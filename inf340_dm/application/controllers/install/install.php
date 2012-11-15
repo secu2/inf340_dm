@@ -72,9 +72,9 @@ class Install extends CI_Controller {
 		$em->flush();
 		
 		//Stations
-		$station1 = new \models\Station('Autrans', 'description', $departement1);
-		$station2 = new \models\Station('Courchevel', 'description', $departement2);
-		$station3 = new \models\Station('Chamonix', 'description', $departement3);
+		$station1 = new \models\Station('Autrans', 'description', $departement7);
+		$station2 = new \models\Station('Courchevel', 'description', $departement14);
+		$station3 = new \models\Station('Chamonix', 'description', $departement15);
 		$em->persist($station1);
 		$em->persist($station2);
 		$em->persist($station3);
