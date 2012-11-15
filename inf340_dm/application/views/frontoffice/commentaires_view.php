@@ -21,11 +21,11 @@
 	<?php endforeach;?>
 </table>
 
-<h2>Ajouter un commentaire <?php echo $station->getNom();?></h2>
+<h2>Ajouter un commentaire</h2>
 	<form action="<?php echo site_url('user/add_commentaire');?>">
 		<?php if(isset($utilisateur)){ ?>
 			<p><input type="hidden" name="nom" value=<?php echo $station->getNom();?>/></p>
-			<p><input type="text" name="data" value="Participez a la discussion" class="commentaire" size="100"></input></p>
+			<p><input type="text" name="data" value="Participez a la discussion" class="commentaire" size="150" id="commentaire"></input></p>
 			<p>Mettre une note</p>
 			<?php for($i=0; $i<=10; $i++){?>
 			<p id="note">

@@ -1,1 +1,1 @@
-<h1>Mise &agrave; jour effectu&eacute;e</h1>
+<h1>Mise à jour effectuée</h1>

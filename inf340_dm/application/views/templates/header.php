@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 <head>
 	<title>Dahu</title>
-	<meta charset="ISO-8859-1">
+	<meta charset="UTF-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	
 	<link href="<?php echo base_url('ressources/css/style.css'); ?>" rel="stylesheet" type="text/css" media="screen" />
@@ -37,7 +37,7 @@
 			<?php if(isset($utilisateur)){ ?>
 			<li>Bonjour <?php echo $utilisateur->getLogin(); ?>
 			</li>
-			<li><a href="<?php echo site_url('user/logout');?>">D&eacute;connexion</a>
+			<li><a href="<?php echo site_url('user/logout');?>">Déconnexion</a>
 			</li>
 			<!-- Sinon afficher liens vers inscription et connexion -->
 			<?php }else{ ?>

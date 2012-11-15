@@ -35,53 +35,24 @@ class Install extends CI_Controller {
 		
 		//peuplement de la base
 		
-		//D�partements
-		$departement1 = new \models\Departement('38','Isère');
-		$departement2 = new \models\Departement('73','Savoie');
-		$departement3 = new \models\Departement('74','Haute Savoie');
-		$departement4 = new \models\Departement('01','Ain');
-		$departement5 = new \models\Departement('02','Aisne');
-		$departement6 = new \models\Departement('03','Allier');
-		$departement7 = new \models\Departement('04','Alpes de Hautes-provence');
-		$departement8 = new \models\Departement('05','Hautes-Alpes');
-		$departement9 = new \models\Departement('06','Alpes maritimes');
-		$departement10 = new \models\Departement('07','Ardêche');
-		$departement11 = new \models\Departement('08','Ardennes');
-		$departement12 = new \models\Departement('09','Ariège');
-		$departement13 = new \models\Departement('10','Aube');
-		$departement14 = new \models\Departement('11','Aude');
-		$departement15 = new \models\Departement('12','Aveyron');
-		$departement16 = new \models\Departement('13','Bouches du Rhône');
-		$departement17 = new \models\Departement('14','Calvados');
-		$departement18 = new \models\Departement('15','Cantal');
-		$departement19 = new \models\Departement('16','Charente');
-		$departement20 = new \models\Departement('17','Charente-Maritime');
-		$departement21 = new \models\Departement('18','Cher');
-		$departement22 = new \models\Departement('19','Corrèze');
-		$departement23 = new \models\Departement('2A','Corse-du-Sud');
-		$departement23 = new \models\Departement('2B','Haute-Corse');
-		$departement24 = new \models\Departement('21','Cote d or');
-		$departement25 = new \models\Departement('22','Côte d armor');
-		$departement26 = new \models\Departement('23','Creuse');
-		$departement27 = new \models\Departement('24','Dordogne');
-		$departement28 = new \models\Departement('25','Doubs');
-		$departement29 = new \models\Departement('26','Drôme');
-		$departement30 = new \models\Departement('27','Eure');
-		$departement31 = new \models\Departement('28','Eure et Loir');
-		$departement32 = new \models\Departement('29','Finistère');
-		$departement33 = new \models\Departement('30','Gard');
-		$departement34 = new \models\Departement('31','Haute-Garonne');
-		$departement35 = new \models\Departement('32','Gers');
-		$departement36 = new \models\Departement('33','Gironde');
-		$departement37 = new \models\Departement('34','Hérault');
-		$departement38 = new \models\Departement('35','Ille-et-Vilaine');
-		$departement39 = new \models\Departement('36','Indre');
-		$departement40 = new \models\Departement('37','Indre et Loire');
-		$departement41 = new \models\Departement('39','Jura');
-		$departement42 = new \models\Departement('40','Landes');
-		$departement43 = new \models\Departement('41','Loir-et-Cher');
-		$departement44 = new \models\Departement('42','Loire');
-		$departement45 = new \models\Departement('43','Haute-Loire');
+		//Départements
+		$departement1 = new \models\Departement('03', 'Allier');
+		$departement2 = new \models\Departement('04', 'Alpes de Haute Provence');
+		$departement3 = new \models\Departement('05', 'Hautes Alpes');
+		$departement4 = new \models\Departement('06', 'Alpes Maritimes');
+		$departement5 = new \models\Departement('15', 'Cantal');
+		$departement6 = new \models\Departement('26', 'Drôme');
+		$departement7 = new \models\Departement('38','Isère');
+		$departement8 = new \models\Departement('39', 'Jura');
+		$departement9 = new \models\Departement('43', 'Haute-Loire');
+		$departement10 = new \models\Departement('63', 'Puy-De-Dôme');
+		$departement11 = new \models\Departement('64', 'Pyrénées Atlantiques');
+		$departement12 = new \models\Departement('65', 'Hautes Pyrénées');
+		$departement13 = new \models\Departement('66', 'Pyrénées Orientales');
+		$departement14 = new \models\Departement('73', 'Savoie');
+		$departement15 = new \models\Departement('74', 'Haute Savoie');
+		$departement16 = new \models\Departement('88', 'Vosges');
+		
 		$em->persist($departement1);
 		$em->persist($departement2);
 		$em->persist($departement3);
@@ -98,35 +69,6 @@ class Install extends CI_Controller {
 		$em->persist($departement14);
 		$em->persist($departement15);
 		$em->persist($departement16);
-		$em->persist($departement17);
-		$em->persist($departement18);
-		$em->persist($departement19);
-		$em->persist($departement20);
-		$em->persist($departement21);
-		$em->persist($departement22);
-		$em->persist($departement23);
-		$em->persist($departement24);
-		$em->persist($departement25);
-		$em->persist($departement26);
-		$em->persist($departement27);
-		$em->persist($departement28);
-		$em->persist($departement29);
-		$em->persist($departement30);
-		$em->persist($departement31);
-		$em->persist($departement32);
-		$em->persist($departement33);
-		$em->persist($departement34);
-		$em->persist($departement35);
-		$em->persist($departement36);
-		$em->persist($departement37);
-		$em->persist($departement38);
-		$em->persist($departement39);
-		$em->persist($departement40);
-		$em->persist($departement41);
-		$em->persist($departement42);
-		$em->persist($departement43);
-		$em->persist($departement44);
-		$em->persist($departement45);
 		$em->flush();
 		
 		//Stations

@@ -71,8 +71,7 @@ class Station extends CI_Controller {
 		$this->form_validation->set_rules('departement_station', '[Département]', 'required');
 	
 		if ($this->form_validation->run() == FALSE){
-			echo var_dump($this->input->post());
-			//redirect(station);
+			redirect(station);
 		}
 		else{
 			$this->load->view('templates/header');
