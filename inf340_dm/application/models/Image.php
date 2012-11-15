@@ -35,7 +35,20 @@ class Image
      *   @JoinColumn(name="station_nom", referencedColumnName="nom", onDelete = "Cascade")
      * })
      */
-    private $stationNom;
+    private $station_nom;
 
-
+    public function __construct($description, $station_nom) {
+    	$this->description = $description;
+    	$this->station_nom = $station_nom;
+    }
+    
+    /**
+     * Permet de connaître l'url de l'image
+     * @return string l'url de l'image
+     */
+    public function getURL(){
+    	return $this->url;
+    }
 }
+
+

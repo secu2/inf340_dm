@@ -2,7 +2,7 @@
 namespace models\repositories;
 
 /**
- * Le d�p�t utilisateur
+ * Le dépôt utilisateur
  * @author jub
  *
  */

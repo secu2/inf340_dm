@@ -36,7 +36,7 @@ class Install extends CI_Controller {
 		//peuplement de la base
 		
 		//D�partements
-		$departement1 = new \models\Departement('38','Is�re');
+		$departement1 = new \models\Departement('38','Isère');
 		$departement2 = new \models\Departement('73','Savoie');
 		$departement3 = new \models\Departement('74','Haute Savoie');
 		$departement4 = new \models\Departement('01','Ain');
@@ -45,35 +45,35 @@ class Install extends CI_Controller {
 		$departement7 = new \models\Departement('04','Alpes de Hautes-provence');
 		$departement8 = new \models\Departement('05','Hautes-Alpes');
 		$departement9 = new \models\Departement('06','Alpes maritimes');
-		$departement10 = new \models\Departement('07','Ard�che');
+		$departement10 = new \models\Departement('07','Ardêche');
 		$departement11 = new \models\Departement('08','Ardennes');
-		$departement12 = new \models\Departement('09','Ari�ge');
+		$departement12 = new \models\Departement('09','Ariège');
 		$departement13 = new \models\Departement('10','Aube');
 		$departement14 = new \models\Departement('11','Aude');
 		$departement15 = new \models\Departement('12','Aveyron');
-		$departement16 = new \models\Departement('13','Bouches du Rh�ne');
+		$departement16 = new \models\Departement('13','Bouches du Rhône');
 		$departement17 = new \models\Departement('14','Calvados');
 		$departement18 = new \models\Departement('15','Cantal');
 		$departement19 = new \models\Departement('16','Charente');
 		$departement20 = new \models\Departement('17','Charente-Maritime');
 		$departement21 = new \models\Departement('18','Cher');
-		$departement22 = new \models\Departement('19','Corr�ze');
+		$departement22 = new \models\Departement('19','Corrèze');
 		$departement23 = new \models\Departement('2A','Corse-du-Sud');
 		$departement23 = new \models\Departement('2B','Haute-Corse');
 		$departement24 = new \models\Departement('21','Cote d or');
-		$departement25 = new \models\Departement('22','C�te d armor');
+		$departement25 = new \models\Departement('22','Côte d armor');
 		$departement26 = new \models\Departement('23','Creuse');
 		$departement27 = new \models\Departement('24','Dordogne');
 		$departement28 = new \models\Departement('25','Doubs');
-		$departement29 = new \models\Departement('26','Dr�me');
+		$departement29 = new \models\Departement('26','Drôme');
 		$departement30 = new \models\Departement('27','Eure');
 		$departement31 = new \models\Departement('28','Eure et Loir');
-		$departement32 = new \models\Departement('29','Finist�re');
+		$departement32 = new \models\Departement('29','Finistère');
 		$departement33 = new \models\Departement('30','Gard');
 		$departement34 = new \models\Departement('31','Haute-Garonne');
 		$departement35 = new \models\Departement('32','Gers');
 		$departement36 = new \models\Departement('33','Gironde');
-		$departement37 = new \models\Departement('34','H�rault');
+		$departement37 = new \models\Departement('34','Hérault');
 		$departement38 = new \models\Departement('35','Ille-et-Vilaine');
 		$departement39 = new \models\Departement('36','Indre');
 		$departement40 = new \models\Departement('37','Indre et Loire');

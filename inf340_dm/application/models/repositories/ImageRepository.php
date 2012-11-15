@@ -18,11 +18,11 @@ class ImageRepository extends \Doctrine\ORM\EntityRepository {
 	 * @param unknown_type $id
 	 * @return \models\Image l'image qui vient d'être crée avec son url
 	 */
-	public function create($description, $url) {
+	public function create($description, $stationNom) {
 		$em = $this->getEntityManager();
 		$repository = $em->getRepository('models\Station');
-		$utilisateur = $repository->findOneById($id);
-		$image = new \models\Image($description, $stationNom);
+		$station_nom = $repository->findOneByNom($stationNom);
+		$image = new \models\Image($description, $station_nom);
 		$em->persist($image);
 		$em->flush();
 		return $image;
@@ -30,6 +30,12 @@ class ImageRepository extends \Doctrine\ORM\EntityRepository {
 
 
 	public function getImageByURL($url)
+	{
+		$image = $this->findOneByUrl($url);
+		return $image;
+	}
+	
+	public function getImageURL($url)
 	{
 		$image = $this->findOneByUrl($url);
 		return $image;

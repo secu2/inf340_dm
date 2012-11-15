@@ -51,7 +51,7 @@ class Station extends CI_Controller {
 		$station = $repository->getStationByNom($nom);
 		$commentaires = $repository2->findByStation($station);
 		$utilisateur = $repository3->findOneById($id);
-		//prepare les donnees a passer � la vue
+		//prepare les donnees a passer à la vue
 		$data['station']=$station;
 		$data2['commentaires'] = $commentaires;
 		$data3['utilisateur'] = $utilisateur;
@@ -66,12 +66,13 @@ class Station extends CI_Controller {
 	{
 		$this->form_validation->set_rules('nom_station', '[Nom de la station]', 'required|callback_nom_station_check');
 		$this->form_validation->set_rules('description_station', '[Description]', 'required');
-		$this->form_validation->set_rules('userfile', '[Photo]', 'required');
-		$this->form_validation->set_rules('description_photo', '[Description Photo]', 'required');
-		$this->form_validation->set_rules('departement_station', '[D�partement]', 'required');
+		//$this->form_validation->set_rules('userfile', '[Photo]', 'required');
+		$this->form_validation->set_rules('description_image', '[Description Image]', 'required');
+		$this->form_validation->set_rules('departement_station', '[Département]', 'required');
 	
 		if ($this->form_validation->run() == FALSE){
-			redirect(welcome/stations);
+			echo var_dump($this->input->post());
+			//redirect(station);
 		}
 		else{
 			$this->load->view('templates/header');
@@ -80,17 +81,18 @@ class Station extends CI_Controller {
 				
 			$em = $this->doctrine->em;
 			$num = $this->input->post('departement_station');
-			$rep = $em->getRepository('models\Departement');
-			$data['departement_station'] = $rep->getDepartementByNumero($num);
-				
-			$repository = $em->getRepository('models\Station');
-				
-				
+			
+			$rep_departement = $em->getRepository('models\Departement');
+			$rep_station = $em->getRepository('models\Station');
+			$rep_image = $em->getRepository('models\Image');
+			$data['departement_station'] = $rep_departement->getDepartementByNumero($num);
+			
 			// UPLOAD Start
 			$img_rep = $em->getRepository('models\Image');
-			$gallery_path = realpath(APPPATH . '..'.DIRECTORY_SEPARATOR.'ressources'.DIRECTORY_SEPARATOR.'images').DIRECTORY_SEPARATOR;
-			$url = temp;
-			$config['upload_path'] = '$gallery_path'; // Chemin du dossier de stockage
+			//$gallery_path = realpath(APPPATH . '..'.DIRECTORY_SEPARATOR.'ressources'.DIRECTORY_SEPARATOR.'images').DIRECTORY_SEPARATOR;
+			$gallery_path = './ressources/images/stations/';
+			$url = 'temp';
+			$config['upload_path'] = $gallery_path; // Chemin du dossier de stockage
 			$config['allowed_types'] = 'gif|jpg|png|jpeg'; // Types d'éxtensions acceptées
 			$config['max_size']	= '10000'; // Taille maximale acceptée
 			$config['max_width']  = '1024'; // Largeur maximale
@@ -99,8 +101,9 @@ class Station extends CI_Controller {
 			$config['overwrite']=true; // Autorise l'écrasement
 				
 			$this->load->library('upload', $config); //Chargement librairie upload
-				
+
 			$upload_status = $this->upload->do_upload(); // Statut de l'upload
+			
 			if($upload_status){ //Si l'upload marche avec ces paramètres
 				$image_data = $this->upload->data(); // On récupère l'upload
 				// Miniature Start
@@ -116,21 +119,21 @@ class Station extends CI_Controller {
 				$resize_status = $this->image_lib->resize();
 				if ($resize_status){
 					$description_image = $this->input->post('description_image');
-					$image = $img_rep->create($description_image, $url);
+					$rep_station->create($data['nom_station'] , $data['description_station'], $data['departement_station']);
+					$image = $rep_image->create($description_image, $this->input->post('nom_station'));
 					$newUrl = $image->getURL();
 					try {
+						$th_ext = '_thumb';
 						rename($gallery_path.$url.$image_data['file_ext'],$gallery_path.$newUrl.$image_data['file_ext']);
-						rename($miniature_path.$url.$image_data['file_ext'], $miniature_path.$newUrl.'min'.$image_data['file_ext']);
-	
-						$repository->create($data['nom_station'] , $data['description_station'], $data['departement_station']);
+						rename($gallery_path.$url.$th_ext.$image_data['file_ext'], $gallery_path.$newUrl.$th_ext.$image_data['file_ext']);						
 					}
 					catch (Exception $e){
-						//en cas d'erreur on supprime l'image de la base de donnee.
-						$repository->delete($url);
+						//en cas d'erreur on supprime la station de la base de donnee.
+						$rep_station->delete($this->input->post('nom_station'));
 							
 					}
 					//redirection vers la page d'accueil du backoffice
-					redirect('welcome/stations');
+					redirect('station');
 				}
 				// Miniature Stop
 			}
@@ -153,7 +156,7 @@ class Station extends CI_Controller {
 			return true;
 		}
 		else{
-			$this->form_validation->set_message('nom_station_check', 'La station existe d�j�');
+			$this->form_validation->set_message('nom_station_check', 'La station existe déjà');
 			return false;
 		}
 	}
