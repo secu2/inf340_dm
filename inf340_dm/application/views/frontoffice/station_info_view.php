@@ -1,6 +1,6 @@
 <!-- Affiche les infos d'une station -->
 <h2><?php echo $station->getNom();?></h2>
-<table border=1>
+<table border=1 id="stations">
 	<tr>
 		<th>Photo</th>
 		<td><?php echo "photo"?></td>
