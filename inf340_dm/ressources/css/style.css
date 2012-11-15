@@ -181,3 +181,11 @@ footer {
 	font-style: italic;
 }
 
+#note{
+	float: left;
+	margin-right: 10px;
+}
+
+#bouton_commentaire{
+	margin-top: 60px; 
+}

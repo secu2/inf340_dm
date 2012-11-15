@@ -126,6 +126,39 @@ class User extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 	
+	function add_commentaire()
+	{
+		$em = $this->doctrine->em;
+		$varsession = $this->session->userdata('loggedin');
+		$id = $varsession['id'];
+		$rep = $em->getRepository('models\Utilisateur');
+		$utilisateur = $rep->getUtilisateurById($id);
+		$data['utilisateur'] = $utilisateur;
+		
+		$this->form_validation->set_rules('nom', '[Nom de la station]', 'required');
+		$this->form_validation->set_rules('data', '[Commentaire]', 'required');
+		$this->form_validation->set_rules('note', '[Note]', 'required');
+		
+		if ($this->form_validation->run() == FALSE){
+			$id_error = 'ajout d\' un commentaire';
+			$data_error['id_error'] = $id_error;
+			$this->load->view('templates/header', $data['utilisateur']);
+			$this->load->view('notifications/error_view', $data_error);
+			$this->load->view('templates/footer');
+		}
+		else{
+			$this->load->view('templates/header', $data['utilisateur']);
+			$data['nom'] = $this->input->post('nom');
+			$data['data'] = $this->input->post('data');
+			$data['note'] = $this->input->post('note');
+			
+			$repository = $em->getRepository('models\Commentaire');
+			$repository->create($id, $data['nom'], $data['data'] , $data['note']);
+			$this->load->view('notifications/add_commentaire_ok_view');
+			$this->load->view('templates/footer');
+		}
+	}
+	
 	function change_level($id)
 	{
 		$em = $this->doctrine->em;

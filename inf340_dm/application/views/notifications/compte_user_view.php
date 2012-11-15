@@ -3,6 +3,6 @@
 <form action="<?php echo site_url('user/updateOk')?>" method="post">
 	<p><label class="labelAlign"> Login : </label> <input name="login"  type="text" value="<?php echo $utilisateur->getLogin();?>"/></p>
 	<p><label class="labelAlign"> Mot de passe : </label> <input name="password" type="password" value="<?php echo $utilisateur->getLogin();?>"/></p>
-	<p><label class="labelAlign"> Level : </label> <input name="level" type="text" value="<?php echo $utilisateur->getLevel();?>" readonly="readonly"/></p>
-	<p><input type="submit" value="Mettre à jour" class="mesSubmitsUpdate"/></p>
+	<p><label class="labelAlign"> Level : </label> <input name="level" type="text" value="<?php echo $utilisateur->getLevel();?>" readonly="readonly" size="1"/></p>
+	<p><input type="submit" value="Mettre &agrave; jour" class="mesSubmitsUpdate"/></p>
 </form>

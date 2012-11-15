@@ -20,10 +20,18 @@
 	</tr>
 	<?php endforeach;?>
 </table>
-	<form action="<?php echo site_url('user/');?>">
+
+<h2>Ajouter un commentaire <?php echo $station->getNom();?></h2>
+	<form action="<?php echo site_url('user/add_commentaire');?>">
 		<?php if(isset($utilisateur)){ ?>
-			<input type="text" value="Participez a la discussion" class="commentaire" size="100"></input>
-			<input type="submit" value="Commenter">
+			<p><input type="hidden" name="nom" value=<?php echo $station->getNom();?>/></p>
+			<p><input type="text" name="data" value="Participez a la discussion" class="commentaire" size="100"></input></p>
+			<p>Mettre une note</p>
+			<?php for($i=0; $i<=10; $i++){?>
+			<p id="note">
+				<input type="radio" name="note" value=<?php echo $i;?> class="commentaire"/><?php echo $i;?>
+			</p><?php }?>
+			<p><input type="submit" value="Commenter" id="bouton_commentaire"></p>
 		<?php }else{ ?>
 			Veuillez vous <a href=<?php echo site_url('user/');?>>connecter</a> ou vous <a href=<?php echo site_url('user/register');?>>inscrire</a> pour laisser un commentaire.
 		<?php } ?>

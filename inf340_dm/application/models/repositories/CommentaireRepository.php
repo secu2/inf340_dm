@@ -8,8 +8,8 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class CommentaireRepository extends \Doctrine\ORM\EntityRepository {
 
-	public function create($id,$nom, $data){
-		$commentaire = new \models\Commentaire($id,$nom,$data);
+	public function create($id, $nom, $data, $note){
+		$commentaire = new \models\Commentaire($id,$nom,$data, $note);
 		$this->getEntityManager()->persist($commentaire);
 		$this->getEntityManager()->flush();
 		return $commentaire;

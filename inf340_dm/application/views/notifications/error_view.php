@@ -1,7 +1,7 @@
-<h2>Erreur: <?php echo $id; ?></h2>
+<h2>Erreur : <?php echo $id_error; ?></h2>
 <p>Une erreur est survenue, veuillez r&eacute;essayer.</p>
 <p>
-<?php if(isset($url_retour)){ ?>
+<?php if(isset($url_retour)){?>
 	<a href="<?php base_url($url_retour); ?>">Retour</a></p>
 <?php }?>
 
