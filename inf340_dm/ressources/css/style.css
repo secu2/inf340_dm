@@ -185,3 +185,14 @@ footer {
 	display: inline;
 	margin-right: 10px;
 }
+
+#stations {
+	background-color: rgba(255,255,255, 0.3);
+	text-align: center;
+}
+
+#commentaires {
+	background-color: rgba(255,255,255, 0.3);
+	text-align: center;
+}
+

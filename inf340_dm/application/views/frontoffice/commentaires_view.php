@@ -1,5 +1,5 @@
 <h2>Commentaires</h2>
-<table border=1>
+<table border=1 id="commentaires">
 	<?php foreach($commentaires as $commentaire) :?>
 	<tr>
 		<!-- Pseudo de la personne qui a poste un commentaire -->
