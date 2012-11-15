@@ -21,7 +21,7 @@
 	<?php endforeach;?>
 </table>
 
-<h2>Ajouter un commentaire <?php echo $station->getNom();?></h2>
+<h2>Ajouter un commentaire</h2>
 	<form action="<?php echo site_url('user/add_commentaire');?>">
 		<?php if(isset($utilisateur)){ ?>
 			<p><input type="hidden" name="nom" value=<?php echo $station->getNom();?>/></p>
