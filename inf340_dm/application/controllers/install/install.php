@@ -93,11 +93,11 @@ class Install extends CI_Controller {
 		$comment1 = new models\Commentaire($user1,$station1,'Commentaire simple', 2);
 		$comment2 = new models\Commentaire($user1,$station2,'Commentaire simple', 3);
 		$comment3 = new models\Commentaire($user1,$station3,'Commentaire simple', 4);
-		$comment4 = new models\Commentaire($user2,$station1,'Commentaire du modo', 2);
+		$comment4 = new models\Commentaire($user2,$station1,'Commentaire du modo', 4);
 		$comment5 = new models\Commentaire($user2,$station2,'Commentaire du modo', 3);
-		$comment6 = new models\Commentaire($user2,$station3,'Commentaire du modo', 4);
-		$comment7 = new models\Commentaire($user3,$station1,'Commentaire de l admin', 2);
-		$comment8 = new models\Commentaire($user3,$station2,'Commentaire de l admin', 3);
+		$comment6 = new models\Commentaire($user2,$station3,'Commentaire du modo', 2);
+		$comment7 = new models\Commentaire($user3,$station1,'Commentaire de l admin', 3);
+		$comment8 = new models\Commentaire($user3,$station2,'Commentaire de l admin', 2);
 		$comment9 = new models\Commentaire($user3,$station3,'Commentaire de l admin', 4);
 		$em->persist($comment1);
 		$em->persist($comment2);
