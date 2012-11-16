@@ -156,7 +156,7 @@ class User extends CI_Controller {
 			$data['note'] = $this->input->post('note');
 			
 			$repository = $em->getRepository('models\Commentaire');
-			$repository->create($id, $data['station'], $data['data'] , $data['note']);
+			$repository->create($utilisateur, $data['station'], $data['data'] , $data['note']);
 			$this->load->view('notifications/add_commentaire_ok_view');
 			$this->load->view('templates/footer');
 		}
