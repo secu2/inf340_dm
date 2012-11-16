@@ -93,9 +93,9 @@ class Station extends CI_Controller {
 			$url = 'temp';
 			$config['upload_path'] = $gallery_path; // Chemin du dossier de stockage
 			$config['allowed_types'] = 'gif|jpg|png|jpeg'; // Types d'éxtensions acceptées
-			$config['max_size']	= '10000'; // Taille maximale acceptée
-			$config['max_width']  = '1024'; // Largeur maximale
-			$config['max_height']  = '768'; // Hauteur maximale
+			$config['max_size']	= '100000'; // Taille maximale acceptée
+			$config['max_width']  = '5000'; // Largeur maximale
+			$config['max_height']  = '5000'; // Hauteur maximale
 			$config['file_name']= $url; // Nom du fichier
 			$config['overwrite']=true; // Autorise l'écrasement
 				
